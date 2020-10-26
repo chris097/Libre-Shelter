@@ -1,0 +1,65 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.header .logo{
+    font-family: Lobster Two;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    padding-top: 6px;
+}
+
+.header .searchForm{
+    width: 829px;
+    height: 53px;
+    border: none;
+    background-color: #F2F4F7;
+    border-radius: 30px;
+    padding: 15px 20px;
+}
+
+.header .searchForm input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding-top: -20px;
+    position: absolute;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.header .searchForm :placeholder-shown{
+    font-size: 16px;
+}
+
+.header .add-book{
+    width: 140px;
+    height: 45px;
+    background: #2374ED;
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 12px 20px;
+    display: flex;
+    outline: none;
+    border: none;
+    position: relative;
+}
+
+.header .add-book:hover{
+    background: #0958ce;
+}
+
+.header .add-book img{
+    width: 20px;
+    height: 20px;
+}
+
+.header .add-book span{
+    margin-left: 6px;
+    margin-top: 3px;
+}
