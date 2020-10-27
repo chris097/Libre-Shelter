@@ -12,22 +12,24 @@ const Header = () =>{
     }
 
     return (
-        <div className="container">
-            <div className="header">
-                <div className="logo">LibraShelter</div>
-                <div className="searchForm">
-                    <img src={searchFormIcon} alt="search-icon"/>
-                   <input type="search" id="search" placeholder="Search book"/>
+        <div className="header">
+            <div className="container">
+                <div className="header-content">
+                    <div className="logo">LibraShelter</div>
+                    <div className="searchForm">
+                        <img src={searchFormIcon} alt="search-icon"/>
+                    <input type="search" id="search" placeholder="Search book"/>
+                    </div>
+                    <button 
+                    className="add-book"
+                    onClick={displayAddBook}
+                    >
+                        <>
+                        <img src={addBookIcon} alt="Add-book-icon"/>
+                        <span>Add Book</span>
+                        </>
+                    </button>
                 </div>
-                <button 
-                className="add-book"
-                onClick={displayAddBook}
-                >
-                    <>
-                    <img src={addBookIcon} alt="Add-book-icon"/>
-                    <span>Add Book</span>
-                    </>
-                </button>
             </div>
         </div>
     )

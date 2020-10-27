@@ -1,8 +1,33 @@
 .container{
-    max-width: 90%;
+    max-width: 92%;
     margin: 0 auto;
 }
 
 button{
     cursor: pointer;
+}
+
+/* Colors */
+/* primary color */
+.primary-color{
+    background: rgba(75, 104, 255, 0.05);
+    color: #2374ED;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.light{
+    background-color: #ffffff;
+}
+
+/* Colors */
+
+/* Fonts */
+.fsz-20{
+    font-size: 20px;
+}
+
+/* Padding */
+.pad-top-5{
+    padding-top: 5px;
 }

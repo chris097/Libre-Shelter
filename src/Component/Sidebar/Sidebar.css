@@ -1,0 +1,9 @@
+.sidebar{
+    width: 225px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    position: fixed;
+    z-index: 555;
+    left: 0;
+}
