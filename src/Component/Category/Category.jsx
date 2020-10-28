@@ -3,6 +3,7 @@ import "./Category.css";
 import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
+import Modal from "../Modal/Modal";
 
 const Category = () => {
     return (
@@ -23,6 +24,8 @@ const Category = () => {
                         <span className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
+                        {/* modal start here... */}
+                        <Modal />
                     </div>
                 </div>
             </div>

@@ -11,3 +11,8 @@
 .sidebar .sidebar-container{
     padding-top: 150px;
 }
+
+.sidebar ul li{
+    margin: 12px 0;
+}
+

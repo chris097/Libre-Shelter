@@ -5,12 +5,12 @@ const SideBar = () => {
     return(
         <>
             <div className="sidebar">
-                <div className="container">
-                    <div className="sidebar-container">
-                        <p>do something here...</p>
-                    </div>
-                </div>
+                <ul className="sidebar-container">
+                    <li>A curated list of every book ever written</li>
+                    <li>Fa Fantacy</li>
+                </ul>      
             </div>
+            
         </>
     )
 }
