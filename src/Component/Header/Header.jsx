@@ -8,7 +8,7 @@ const initialState = []
 
 const Header = () =>{
     function displayAddBook () {
-        console.log("something was clicked...")
+        console.log("What are you planning...")
     }
 
     return (

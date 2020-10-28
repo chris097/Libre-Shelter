@@ -5,6 +5,8 @@
     background-color: #f7f7f7;
     margin-top: 70px;
     z-index: 666;
+    position: fixed;
+    left: 0;
 }
 
 .category .category-content{

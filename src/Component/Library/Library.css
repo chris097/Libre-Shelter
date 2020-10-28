@@ -1,0 +1,49 @@
+.lib{
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 333;
+    padding-top: 150px;
+}
+
+.lib .cards-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 22px;
+}
+
+.lib .cards-container .card{
+    Width: 219px;
+    Height: 329px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    margin-top: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.lib .cards-container .card .book-name{
+    padding: 10px;
+    line-height: 1.2;
+}
+.lib .cards-container .card .tweet{
+    line-height: .2;
+    display: flex;
+    padding: 10px;
+    color: #B8B9BE;
+}
+
+.lib .cards-container .card .like-comment,
+.lib .cards-container .card .msg{
+    display: flex;
+}
+
+.lib .cards-container .card .like-comment .like-num,
+.lib .cards-container .card .msg .msg-num{
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.lib .cards-container .card .msg{
+    margin-left: 30px;
+}

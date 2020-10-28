@@ -7,3 +7,7 @@
     z-index: 555;
     left: 0;
 }
+
+.sidebar .sidebar-container{
+    padding-top: 150px;
+}
