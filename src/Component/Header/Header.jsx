@@ -3,6 +3,7 @@ import "./Header.css";
 import "../Utils/index.css"
 import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
+import AddBook from "../AddBook/AddBook";
 
 const initialState = []
 
@@ -12,6 +13,7 @@ const Header = () =>{
     }
 
     return (
+        <>
         <div className="header">
             <div className="container">
                 <div className="header-content">
@@ -32,6 +34,8 @@ const Header = () =>{
                 </div>
             </div>
         </div>
+        <AddBook />
+        </>
     )
 }
 
