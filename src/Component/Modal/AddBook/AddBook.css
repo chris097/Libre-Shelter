@@ -1,0 +1,47 @@
+.add-book{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.45);
+    position: fixed;
+    z-index: 9999;
+}
+
+.add-container{
+    width: 421px;
+    height: 550px;
+    position: fixed;
+    z-index: 99999;
+    background-color: #ffffff;
+    transform: translate(-50%,-50%);
+    top: 52%;
+    left: 50%;
+    padding: 20px 40px;
+    font-weight: 600;
+}
+
+.add-container form{
+    margin-top: 20px;
+}
+
+.add-container form input{
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1.2px solid #DCDCE3;
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 6px;
+}
+
+.add-container button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #2374ED;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 6px;
+}
