@@ -3,7 +3,8 @@ import "./Category.css";
 import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
-import Modal from "../Modal/Modal";
+import DisplayOption from "../Modal/Option";
+import FilterModal from "../Modal/Filter";
 
 const Category = () => {
     return (
@@ -21,11 +22,13 @@ const Category = () => {
                             <img src={filterIcon} alt="filterIcon" className="filter-icon"/>
                             <div>Filter</div>
                        </div>
-                        <span className="light">
+                        <span 
+                        className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
                         {/* modal start here... */}
-                        <Modal />
+                        {/* <DisplayOption /> */}
+                        <FilterModal />
                     </div>
                 </div>
             </div>

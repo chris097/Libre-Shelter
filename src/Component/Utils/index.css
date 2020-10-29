@@ -11,6 +11,11 @@ button{
     display: flex;
 }
 
+.column{
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Colors */
 /* primary color */
 .primary-color{
@@ -41,7 +46,31 @@ button{
     font-size: 13px;
 }
 
+.fsz-11{
+    font-size: 11px;
+}
+
 /* Padding */
 .pad-top-5{
     padding-top: 5px;
+}
+
+.is-active{
+    width: 30px;
+    height: 30px;
+    background-color: #2374ED;
+    padding: 4px 0px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.active,
+.current{
+    background-color: #2374ED;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.text-center{
+    text-align: center;
 }
