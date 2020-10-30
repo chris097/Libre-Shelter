@@ -7,9 +7,11 @@ import card3 from "./Images/card3-img.svg";
 import card4 from "./Images/card4-img.svg";
 import loveIcon from "./Icons/Vector.svg";
 import msgIcon from "./Icons/msg-icon.svg";
+import Books from "../Modal/Books/Books";
 
 const Lib = () => {
     return(
+        <>
         <div className="lib">
             <div className="cards-container">
                 <div className="card">
@@ -99,6 +101,8 @@ const Lib = () => {
                 </div>
             </div>
         </div>
+        <Books />
+        </>
     )
 }
 

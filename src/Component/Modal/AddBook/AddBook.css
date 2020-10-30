@@ -22,12 +22,12 @@
 }
 
 .add-container .close-modal{
-    transition: 1s all ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .add-container .close-modal:hover{
     transform: rotate(180deg);
-    background-color: #b1b1b1;
+    background-color: rgba(196, 196, 196, 0.13);
 }
 
 .add-container form{
