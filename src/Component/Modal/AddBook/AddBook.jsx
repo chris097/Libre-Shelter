@@ -9,7 +9,7 @@ const AddBook = () => {
             <div className="add-container">
                 <div className="column">
                 <div>Add a Book</div>
-                <div><img src={closeIcon} alt=""/></div>
+                <div className="close-modal"><img src={closeIcon} alt=""/></div>
                 </div>
                 <form action="">
                     <label htmlFor="tittle">Tittle</label>
