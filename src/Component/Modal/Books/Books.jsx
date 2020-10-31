@@ -2,6 +2,10 @@ import React from "react";
 import "./Book.css";
 import closeIcon from "../AddBook/Icons/close.svg";
 import bookImg from "./Images/book-img.svg";
+import loveIcon from "./Icons/love-icon.svg";
+import editIcon from "./Icons/edit-icon.svg";
+import deleteIcon from "./Icons/delete-icon.svg";
+import commentImg from "./Images/comment-img.svg";
 
 
 const Books = () => {
@@ -45,7 +49,25 @@ const Books = () => {
                         culpa deserunt cupidatat esse consequat laboris. Id 
                         aliquip non consectetur esse proident duis Lorem.
                     </p>
+                    <div className="column">
+                        <div className="love-icon">
+                            <img src={loveIcon} alt=""/><span>30</span>
+                        </div>
+                        <div className="col">
+                            <div className="edit-icon">
+                                <img src={editIcon} alt="edit-icon"/> 
+                            </div>
+                            <div className="delete-icon">
+                                <img src={deleteIcon} alt="delte-icon"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div>32 Comments</div>
+            <div className="col">
+                <div className="comment-img"><img src={commentImg} alt=""/></div>
+                <div>comment box</div>
             </div>
         </div>
         </>

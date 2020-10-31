@@ -13,13 +13,15 @@
     height: 600px;
     position: fixed;
     z-index: 99999;
-    background-color: #ffffff;
+    background-color: #F2F4F7;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
     padding: 20px 30px;
     font-size: 13px;
     font-weight: 400;
+    border-radius: 5px;
 }
 
 .books-container .book-col-1 img{
@@ -38,8 +40,44 @@
     margin-left: 5px;
     color: #5977DF;
 }
+/* .books-container .book-col-1 .author,
+.books-container .book-col-1 .pubished,
+.books-container .book-col-1 .pubisher,
+.books-container .book-col-1 .isbn{
+    font-size: 12px;
+    font-weight: 600;
+} */
 
 .books-container .book-col-2 p{
     width: 328px;
     height: 308px;
+}
+
+.books-container .book-col-2 .love-icon img,
+.books-container .book-col-2 .edit-icon img,
+.books-container .book-col-2 .delete-icon img{
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    padding: 6px;
+    clip-path: circle();
+}
+
+.books-container .book-col-2 .delete-icon img{
+    margin-left: 10px;
+}
+
+.books-container .book-col-2 span{
+    padding-bottom: -40px;
+    position: absolute;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.books-container .comment-img img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    clip-path: circle();
 }
