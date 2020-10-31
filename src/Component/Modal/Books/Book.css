@@ -40,13 +40,13 @@
     margin-left: 5px;
     color: #5977DF;
 }
-/* .books-container .book-col-1 .author,
+.books-container .book-col-1 .author,
 .books-container .book-col-1 .pubished,
 .books-container .book-col-1 .pubisher,
 .books-container .book-col-1 .isbn{
     font-size: 12px;
     font-weight: 600;
-} */
+}
 
 .books-container .book-col-2 p{
     width: 328px;
