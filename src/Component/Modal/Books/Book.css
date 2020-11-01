@@ -51,6 +51,7 @@
 .books-container .book-col-2 p{
     width: 328px;
     height: 308px;
+    margin-bottom: -20px;
 }
 
 .books-container .book-col-2 .love-icon img,
@@ -67,10 +68,13 @@
 }
 
 .books-container .book-col-2 span{
-    padding-bottom: -40px;
+   
     position: absolute;
-    font-size: 12px;
-    margin-left: 2px;
+    font-size: 10px;
+    margin-left: -2px;
+    background-color: #ffffff;
+    clip-path: circle();
+    padding: 3px;
 }
 
 .books-container .comment-img img{
@@ -80,4 +84,44 @@
     width: 30px;
     height: 30px;
     clip-path: circle();
+    margin-top: 2px;
+    margin-right: 3px;
 }
+
+.books-container .write-comment,
+.books-container .write-comment-box{
+    width: 100%;
+}
+
+.books-container .write-comment input,
+.books-container .write-comment-box input{
+    width: 100%;
+    height: 29px;
+    border: 1px solid #DCDCE3;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 3px;
+    border-radius: 3px;
+    outline: none;
+}
+.books-container .write-comment-box input{
+    height: 41px;
+}
+
+.books-container .comment-edit,
+.books-container .comment-delete{
+    border: none;
+    color: #8990A6;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.books-container .comment-delete{
+    margin-left: 10px;
+}
+
+.books-container .comment-edit:hover,
+.books-container .comment-delete:hover{
+    border-bottom: 1px solid #8990A6;
+}
+

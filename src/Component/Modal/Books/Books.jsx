@@ -64,10 +64,23 @@ const Books = () => {
                     </div>
                 </div>
             </div>
-            <div>32 Comments</div>
+            <div className="mg-10 fsw-600">32 Comments</div>
             <div className="col">
                 <div className="comment-img"><img src={commentImg} alt=""/></div>
-                <div>comment box</div>
+                <div className="write-comment">
+                    <input type="text" id="write-comment" placeholder="Write a comment"/>
+                </div>
+            </div>
+            <div className="col mg-top-5">
+                <div className="comment-img"><img src={commentImg} alt=""/></div>
+                <div className="write-comment-box">
+                    <div className="fsz-12 fsw-600">Okeyhacker <span className="light-color fsz-10 mg-lf">1 Nov at 4:09</span></div>
+                    <input type="text" id="write-comment-box" value="do something now..."/>
+                    <div className="col">
+                        <button className="comment-edit">Edit</button>
+                        <button className="comment-delete">Delete</button>
+                    </div>
+                </div>
             </div>
         </div>
         </>
