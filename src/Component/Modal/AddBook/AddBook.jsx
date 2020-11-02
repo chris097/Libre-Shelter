@@ -5,11 +5,24 @@ import closeIcon from "./Icons/close.svg";
 
 
 const AddBook = () => {
-    const [modalIsOpen, setModalIsOpen] = useState(true)
+    const [modalIsOpen, setModalIsOpen] = useState([])
 
     return(
         <>
-        <Modal isOpen={modalIsOpen}>
+        <Modal isOpen={modalIsOpen}
+        style={{
+            overlay: {
+              zIndex: 999,
+              backgroundColor: 'transparent'
+            },
+            content: {
+             backgroundColor: ' ',
+             border: ' ',
+            overflow: 'auto',
+            WebkitOverflowScrolling: 'touch'
+            }
+          }}
+        >
             <div className="add-book"></div>
             <div className="add-container">
                 <div className="column">
