@@ -10,16 +10,17 @@
 
 .add-container{
     width: 421px;
-    height: 550px;
+    height: 95%;
     position: fixed;
     z-index: 99999;
     background-color: #F2F4F7;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    box-shadow: 1px 1px 5px 5px rgba(255, 255, 255, 0.349);
     transform: translate(-50%,-50%);
-    top: 52%;
+    top: 50%;
     left: 50%;
     padding: 20px 40px;
     font-weight: 600;
+    overflow: auto;
     border-radius: 5px;
 }
 
@@ -44,6 +45,10 @@
     border-radius: 3px;
     outline: none;
     margin-bottom: 6px;
+}
+
+.add-container form #desc{
+    height: 80px;
 }
 
 .add-container button{

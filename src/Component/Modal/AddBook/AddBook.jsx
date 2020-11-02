@@ -1,25 +1,21 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
 import "./AddBook.css";
 import closeIcon from "./Icons/close.svg";
 
-let addContainer = "add-container";
 
 const AddBook = () => {
-    const [close, setClose] = useState(addContainer);
+    const [modalIsOpen, setModalIsOpen] = useState(true)
 
-    const closeModal = () =>{
-        return(
-            setClose(' ')
-        )
-    }
     return(
         <>
+        <Modal isOpen={modalIsOpen}>
             <div className="add-book"></div>
-            <div className={close}>
+            <div className="add-container">
                 <div className="column">
                 <div>Add a Book</div>
                 <div 
-                onClick={closeModal}
+                onClick={() => setModalIsOpen(false)}
                 className="close-modal">
                     <img src={closeIcon} alt=""/>
                 </div>
@@ -40,6 +36,7 @@ const AddBook = () => {
                     <button type="submit">Add</button>
                 </form>
             </div>
+            </Modal>
         </>
     )
 }
