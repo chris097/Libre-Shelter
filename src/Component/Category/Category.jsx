@@ -3,7 +3,7 @@ import "./Category.css";
 import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
-import DisplayOption from "../Modal/Option";
+// import DisplayOption from "../Modal/Option";
 import FilterModal from "../Modal/Filter";
 
 const Category = () => {

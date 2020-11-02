@@ -46,8 +46,14 @@ button{
 .fsw-600{
     font-weight: 600;
 }
+.fsw-400{
+    font-weight: 400;
+}
 .fsz-13{
     font-size: 13px;
+}
+.fsz-14{
+    font-size: 14px;
 }
 .fsz-12{
     font-size: 12px;
@@ -95,4 +101,12 @@ button{
 
 .text-center{
     text-align: center;
+}
+
+.close-modal{
+    transition: all 1s ease-in-out;
+}
+
+.close-modal:hover{
+    transform: rotate(360deg);
 }

@@ -7,7 +7,7 @@ import card3 from "./Images/card3-img.svg";
 import card4 from "./Images/card4-img.svg";
 import loveIcon from "./Icons/Vector.svg";
 import msgIcon from "./Icons/msg-icon.svg";
-import Books from "../Modal/Books/Books";
+// import Books from "../Modal/Books/Books";
 
 const Lib = () => {
     return(
@@ -101,7 +101,7 @@ const Lib = () => {
                 </div>
             </div>
         </div>
-        <Books />
+        {/* <Books /> */}
         </>
     )
 }

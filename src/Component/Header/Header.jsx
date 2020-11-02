@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Header.css";
 import "../Utils/index.css"
 import searchFormIcon from "../Header/Icons/search-icon.svg";
@@ -6,8 +6,12 @@ import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import AddBook from "../Modal/AddBook/AddBook";
 
 const Header = () =>{
+    const [addBook, setAddBook] = useState([])
+
     function displayAddBook () {
-        console.log("What are you planning...")
+        return(
+            setAddBook(<AddBook />)
+        )
     }
 
     return (
@@ -32,7 +36,7 @@ const Header = () =>{
                 </div>
             </div>
         </div>
-        {/* <AddBook /> */}
+        { !addBook ? " " : addBook }
         </>
     )
 }

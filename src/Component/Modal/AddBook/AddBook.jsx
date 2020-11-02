@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AddBook.css";
 import closeIcon from "./Icons/close.svg";
 
+let addContainer = "add-container";
+
 const AddBook = () => {
+    const [close, setClose] = useState(addContainer);
+
+    const closeModal = () =>{
+        return(
+            setClose(' ')
+        )
+    }
     return(
         <>
             <div className="add-book"></div>
-            <div className="add-container">
+            <div className={close}>
                 <div className="column">
                 <div>Add a Book</div>
-                <div className="close-modal"><img src={closeIcon} alt=""/></div>
+                <div 
+                onClick={closeModal}
+                className="close-modal">
+                    <img src={closeIcon} alt=""/>
+                </div>
                 </div>
                 <form action="">
                     <label htmlFor="tittle">Tittle</label>

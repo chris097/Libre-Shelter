@@ -1,5 +1,6 @@
 import React from "react";
 import "./Book.css";
+import "../../Utils/index.css";
 import closeIcon from "../AddBook/Icons/close.svg";
 import bookImg from "./Images/book-img.svg";
 import loveIcon from "./Icons/love-icon.svg";
@@ -14,8 +15,8 @@ const Books = () => {
         <div className="books"></div>
         <div className="books-container">
             <div className="column">
-                <div>The purse mase</div>
-                <div><img src={closeIcon} alt=""/></div>
+                <div className="fsw-600 fsz-14">The purse mase</div>
+                <div className="close-modal"><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
                 <div className="book-col-1">
@@ -74,7 +75,7 @@ const Books = () => {
             <div className="col mg-top-5">
                 <div className="comment-img"><img src={commentImg} alt=""/></div>
                 <div className="write-comment-box">
-                    <div className="fsz-12 fsw-600">Okeyhacker <span className="light-color fsz-10 mg-lf">1 Nov at 4:09</span></div>
+                    <div className="fsz-12 fsw-600">Okeyhacker <span className="light-color fsz-10 mg-lf fsw-400">1 Nov at 4:09</span></div>
                     <input type="text" id="write-comment-box" value="do something now..."/>
                     <div className="col">
                         <button className="comment-edit">Edit</button>
