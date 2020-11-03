@@ -6,6 +6,7 @@ import "../Modal/AddBook/AddBook.css";
 import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import closeIcon from "../Modal/AddBook/Icons/close.svg";
+Modal.setAppElement()
 // import AddBook from "../Modal/AddBook/AddBook";
 
 const tit = '';
@@ -18,7 +19,8 @@ const Header = () =>{
 
     const mySubmitHandler = (e) =>{
         e.preventDefault()
-        alert([tittle, bo])
+        console.log(tittle)
+        setTittle('')
     }
 
     return (
