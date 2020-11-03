@@ -8,8 +8,18 @@ import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import closeIcon from "../Modal/AddBook/Icons/close.svg";
 // import AddBook from "../Modal/AddBook/AddBook";
 
+const tit = '';
+const book = '';
+
 const Header = () =>{
-    const [modalIsOpen, setModalIsOpen] = useState(false)
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [tittle, setTittle] = useState(tit);
+    const [bo, setBo] = useState(book)
+
+    const mySubmitHandler = (e) =>{
+        e.preventDefault()
+        alert([tittle, bo])
+    }
 
     return (
         <>
@@ -57,11 +67,21 @@ const Header = () =>{
                     <img src={closeIcon} alt=""/>
                 </div>
                 </div>
-                <form action="">
+                <form action="" onSubmit={mySubmitHandler}>
                     <label htmlFor="tittle">Tittle</label>
-                    <div><input type="text" name="tittle" id="tittle"/></div>
+                    <div><input 
+                    value={tittle}
+                    onChange={(e) => setTittle(e.target.value)}
+                    type="text" 
+                    name="tittle" 
+                    id="tittle"/></div>
                     <label htmlFor="tittle">Author</label>
-                    <div><input type="text" name="author" id="author"/></div>
+                    <div><input 
+                    value={bo}
+                    onChange={(e) => setBo(e.target.value)}
+                    type="text" 
+                    name="author" 
+                    id="author"/></div>
                     <label htmlFor="tittle">Book Url</label>
                     <div><input type="text" name="book" id="book"/></div>
                     <label htmlFor="tittle">Published</label>
