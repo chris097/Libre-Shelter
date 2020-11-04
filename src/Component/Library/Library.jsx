@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Library.css";
 import "../Utils/index.css";
 import card1 from "./Images/card1-img.svg";
@@ -11,15 +11,38 @@ import axios from "axios";
 // import Books from "../Modal/Books/Books";
 
 const Lib = () => {
-    // const [ books, setBooks] = useState([])
-        axios(`http://localhost:3004/books`)
-        .then(res =>{
-            console.log(res.data)
-        })
+    const [ books, setBooks] = useState([])
+    let url = "http://localhost:3004/books";
+
+    useEffect(() => {
+    axios.get(`${url}`)
+    .then(res => setBooks(res.data))
+    .catch(err => console(err.message))
+    }, [])
+        
     return(
         <>
         <div className="lib">
             <div className="cards-container">
+                {books.map(books => (
+                    <div className="card" id={books.id}>
+                    <img src={card1} alt="card1"/>
+                    <div className="book-name">
+                        <div className="fsw-600">{books.title}</div>
+                        <div className="secondary-color fsz-13">Stuart Matt</div>
+                    </div>
+                    <div className="tweet">
+                        <div className="like-comment">
+                            <img src={loveIcon} alt=""/>
+                            <div className="like-num">23</div>
+                        </div>
+                        <div className="msg">
+                            <img src={msgIcon} alt=""/>
+                            <div className="msg-num">23</div>
+                        </div>
+                    </div>
+                </div>
+                ))}
                 <div className="card">
                     <img src={card1} alt="card1"/>
                     <div className="book-name">

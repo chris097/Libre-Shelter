@@ -8,7 +8,21 @@
         "ISBN": "",
         "bookUrl": "https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X",
         "description": "Why it can matter more than IQ",
-        "image": ""
+        "image": "",
+        "likes" : 30,
+        "comments": 30
+      },
+      {
+        "id": 2,
+        "title": "Emotional",
+        "author": "Daniel Goleman",
+        "isPublished": 1995,
+        "ISBN": "",
+        "bookUrl": "https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X",
+        "description": "Why it can matter more than IQ",
+        "image": "",
+        "likes" : 30,
+        "comments": 30
       }
     ],
     "comments": [
