@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Emotional Intelligence",
+      "author": "Daniel Goleman",
+      "isPublished": 1995,
+      "ISBN": "",
+      "bookUrl": "https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X",
+      "description": "Why it can matter more than IQ",
+      "image": ""
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Wide-ranging and information, Dan Goleman's lively new book reveals the many fascinating facets of emotion that new research is discovering. I recommend it highly",
+      "postId": 1,
+      "name": "Carol Tavris"
+    }
+  ],
+  "profile": {
+    "name": "Jane Smith"
+  }
+}

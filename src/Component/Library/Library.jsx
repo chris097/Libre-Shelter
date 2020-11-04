@@ -7,9 +7,15 @@ import card3 from "./Images/card3-img.svg";
 import card4 from "./Images/card4-img.svg";
 import loveIcon from "./Icons/Vector.svg";
 import msgIcon from "./Icons/msg-icon.svg";
+import axios from "axios";
 // import Books from "../Modal/Books/Books";
 
 const Lib = () => {
+    // const [ books, setBooks] = useState([])
+        axios(`http://localhost:3004/books`)
+        .then(res =>{
+            console.log(res.data)
+        })
     return(
         <>
         <div className="lib">
