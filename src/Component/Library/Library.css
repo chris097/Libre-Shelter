@@ -12,6 +12,13 @@
     grid-column-gap: 22px;
 }
 
+@media screen and (max-width: 768px){
+    .lib .cards-container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 2px;
+    }
+}
+
 .lib .cards-container .card{
     Width: 219px;
     Height: 329px;
@@ -46,4 +53,11 @@
 
 .lib .cards-container .card .msg{
     margin-left: 30px;
+}
+
+@media screen and (max-width: 400px){
+    .lib .cards-container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 2px;
+    }
 }

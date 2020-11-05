@@ -17,24 +17,33 @@ const Lib = () => {
     useEffect(() => {
     axios.get(`${url}`)
     .then(res => setBooks(res.data))
-    .catch(err => console(err.message))
-    }, [])
+    .catch(err => console.log('Something went wrong...', err.message))
+    }, [url])
+
         
     return(
         <>
         <div className="lib">
             <div className="cards-container">
-                {books.map(books => (
-                    <div className="card" id={books.id}>
+                {books.map(book => (
+                    <>
+                    <div className="card"
+                    onClick={() => console.log('Someone clicked a modal')}
+                    >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
-                        <div className="fsw-600">{books.title}</div>
-                        <div className="secondary-color fsz-13">Stuart Matt</div>
+                        <div className="fsw-600">{book.title}</div>
+                        <div className="secondary-color fsz-13">{book.author}</div>
                     </div>
                     <div className="tweet">
-                        <div className="like-comment">
+                        <div className="like-comment"
+                        onClick={e => 
+                            console.log(e)
+                        }
+                        >
                             <img src={loveIcon} alt=""/>
-                            <div className="like-num">23</div>
+                            <div className="like-num"
+                            >{book.likes}</div>
                         </div>
                         <div className="msg">
                             <img src={msgIcon} alt=""/>
@@ -42,6 +51,7 @@ const Lib = () => {
                         </div>
                     </div>
                 </div>
+                    </>
                 ))}
                 <div className="card">
                     <img src={card1} alt="card1"/>
