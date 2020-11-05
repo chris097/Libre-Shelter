@@ -38,7 +38,7 @@ const Books = ({modalIsOpen, setModalIsOpen}) => {
             <div className="column">
                 <div className="fsw-600 fsz-14">The purse mase</div>
                 <div className="close-modal"
-                onClick={e => console.log(e.target)}
+                onClick={() => setModalIsOpen(false)}
                 ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
@@ -114,7 +114,7 @@ const Books = ({modalIsOpen, setModalIsOpen}) => {
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
-     const [ modalIsOpen, setModalIsOpen] = useState(true)
+     const [ modalIsOpen, setModalIsOpen] = useState(false)
 
     let url = "http://localhost:3004/books";
 
@@ -123,6 +123,10 @@ const Lib = () => {
     .then(res => setBooks(res.data))
     .catch(err => console.log('Something went wrong...', err.message))
     }, [url]);
+
+    const getBookModal = () => {
+        setModalIsOpen(true)
+    }
         
     return(
         <>
@@ -133,6 +137,7 @@ const Lib = () => {
                     <div className="card"
                     id={book.id}
                     key={book.id}
+                    onClick={getBookModal}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
@@ -244,7 +249,10 @@ const Lib = () => {
                 </div>
             </div>
         </div>
-        <Books modalIsOpen={modalIsOpen}/>
+        <Books 
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+        />
         </>
     )
 }
