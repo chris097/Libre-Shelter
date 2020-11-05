@@ -16,7 +16,7 @@ import commentImg from "../Modal/Books/Images/comment-img.svg";
 import "../Modal/Books/Book.css";
 import Modal from "react-modal";
 
-const Books = ({modalIsOpen, setModalIsOpen}) => {
+const Books = ({modalIsOpen, setModalIsOpen, book}) => {
     return(
         <>
         <Modal isOpen={modalIsOpen}
@@ -58,20 +58,8 @@ const Books = ({modalIsOpen, setModalIsOpen}) => {
                     </div>
                 </div>
                 <div className="book-col-2">
-                    <p>Culpa nulla pariatur cupidatat nisi incididunt
-                        ea do ipsum. Incididunt quis mollit elit commodo
-                        cillum eiusmod reprehenderit labore irure. Cillum
-                        et incididunt et nostrud exercitation quis aute
-                        laboris non ut adipisicing. Laboris ad minim aute
-                        nulla proident deserunt velit anim sunt aliquip ut
-                        sit. Exercitation aliquip ullamco officia non 
-                        aliqua. Sint deserunt aliquip veniam id eiusmod
-                        sit consectetur mollit ea aliqua officia consequat.
-                        Magna non mollit nisi est commodo voluptate aute id.
-                        Deserunt nostrud id do in nisi mollit deserunt non. 
-                        Pariatur fugiat cillum irure elit sint nisi ad ipsum
-                        culpa deserunt cupidatat esse consequat laboris. Id 
-                        aliquip non consectetur esse proident duis Lorem.
+                    <p>
+                        {book}
                     </p>
                     <div className="column">
                         <div className="love-icon">
@@ -136,7 +124,7 @@ const Lib = () => {
                     <>
                     <div className="card"
                     id={book.id}
-                    key={book.id}
+                    key={book}
                     onClick={getBookModal}
                     >
                     <img src={card1} alt="card1"/>
@@ -160,7 +148,12 @@ const Lib = () => {
                         </div>
                     </div>
                 </div>
-                    </>
+                <Books
+                    modalIsOpen={modalIsOpen}
+                    setModalIsOpen={setModalIsOpen}
+                    book={book.description} 
+                />
+                </>
                 ))}
                 <div className="card">
                     <img src={card1} alt="card1"/>
@@ -249,10 +242,6 @@ const Lib = () => {
                 </div>
             </div>
         </div>
-        <Books 
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-        />
         </>
     )
 }
