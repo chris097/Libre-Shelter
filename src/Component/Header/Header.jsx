@@ -1,25 +1,19 @@
 import React, {useState} from "react";
-import Modal from "react-modal";
 import "./Header.css";
 import "../Utils/index.css";
 import "../Modal/AddBook/AddBook.css";
 import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import BookModal from "../Modal/AddBook/AddBook";
-Modal.setAppElement()
-// import AddBook from "../Modal/AddBook/AddBook";
-
-const tit = '';
-const book = '';
 
 const Header = () =>{
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [tittle, setTittle] = useState(tit);
-    const [bo, setBo] = useState(book)
+    const [tittle, setTittle] = useState('');
+    const [book, setBook] = useState('')
 
     const mySubmitHandler = (e) =>{
         e.stopPropagation()
-        console.log(tittle, bo)
+        console.log(tittle, book)
     }
 
     return (
@@ -48,8 +42,8 @@ const Header = () =>{
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
         mySubmitHandler={mySubmitHandler}
-        bo={bo}
-        setBo={setBo}
+        book={book}
+        setBook={setBook}
         setTittle={setTittle}
          />
         </>
