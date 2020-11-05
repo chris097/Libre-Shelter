@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 import "./AddBook.css";
 import closeIcon from "./Icons/close.svg";
 
 
-const AddBook = () => {
-    const [modalIsOpen, setModalIsOpen] = useState([])
-
+const BookModal = ({modalIsOpen, setModalIsOpen, mySubmitHandler, bo, setBo, tittle, setTittle}) =>{
     return(
-        <>
         <Modal isOpen={modalIsOpen}
         style={{
             overlay: {
@@ -33,11 +30,22 @@ const AddBook = () => {
                     <img src={closeIcon} alt=""/>
                 </div>
                 </div>
-                <form action="">
+                <form action="" onSubmit={mySubmitHandler}>
                     <label htmlFor="tittle">Tittle</label>
-                    <div><input type="text" name="tittle" id="tittle"/></div>
+                    <div><input 
+                    value={tittle}
+                    key={tittle}
+                    onChange={(e) => setTittle(e.target.value)}
+                    type="text" 
+                    name="tittle" 
+                    id="tittle"/></div>
                     <label htmlFor="tittle">Author</label>
-                    <div><input type="text" name="author" id="author"/></div>
+                    <div><input 
+                    value={bo}
+                    onChange={(e) => setBo(e.target.value)}
+                    type="text" 
+                    name="author" 
+                    id="author"/></div>
                     <label htmlFor="tittle">Book Url</label>
                     <div><input type="text" name="book" id="book"/></div>
                     <label htmlFor="tittle">Published</label>
@@ -49,9 +57,8 @@ const AddBook = () => {
                     <button type="submit">Add</button>
                 </form>
             </div>
-            </Modal>
-        </>
+        </Modal>
     )
 }
 
-export default AddBook;
+export default BookModal;

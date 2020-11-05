@@ -8,8 +8,8 @@ import FilterModal from "../Modal/Filter";
 
 
 const Category = () => {
-    const [filterModal, setFilterModal] = useState([]);
-    const [displayOption, setDisplayOption] = useState([]);
+    const [filterModal, setFilterModal] = useState(false);
+    const [displayOption, setDisplayOption] = useState(false);
 
     const displayFilterModal = () =>{
         setFilterModal(<FilterModal />)
@@ -45,7 +45,7 @@ const Category = () => {
                         </span>
                         {/* modal start here... */}
                         {/* <DisplayOption /> */}
-                        { displayOption ? displayOption : " " }
+                        { displayOption }
                         {/* <FilterModal /> */}
                         { filterModal }
                     </div>

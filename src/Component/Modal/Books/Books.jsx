@@ -8,15 +8,20 @@ import editIcon from "./Icons/edit-icon.svg";
 import deleteIcon from "./Icons/delete-icon.svg";
 import commentImg from "./Images/comment-img.svg";
 
+const book = "books"
 
-const Books = () => {
+const Books = check => {
+
+    
     return(
         <>
-        <div className="books"></div>
+        <div className={book}></div>
         <div className="books-container">
             <div className="column">
                 <div className="fsw-600 fsz-14">The purse mase</div>
-                <div className="close-modal"><img src={closeIcon} alt=""/></div>
+                <div className="close-modal"
+                onClick={e => console.log(e.target)}
+                ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
                 <div className="book-col-1">

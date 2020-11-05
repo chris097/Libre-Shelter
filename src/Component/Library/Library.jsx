@@ -8,18 +8,23 @@ import card4 from "./Images/card4-img.svg";
 import loveIcon from "./Icons/Vector.svg";
 import msgIcon from "./Icons/msg-icon.svg";
 import axios from "axios";
-// import Books from "../Modal/Books/Books";
+import Books from "../Modal/Books/Books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
+    const [ bookContent, setBookContent] = useState(false)
+
     let url = "http://localhost:3004/books";
 
     useEffect(() => {
     axios.get(`${url}`)
     .then(res => setBooks(res.data))
     .catch(err => console.log('Something went wrong...', err.message))
-    }, [url])
+    }, [url]);
 
+    const displayBookContent = () => {
+        setBookContent(<Books removeModal=' ' />)
+    }
         
     return(
         <>
@@ -28,7 +33,9 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    onClick={() => console.log('Someone clicked a modal')}
+                    id={book.id}
+                    key={book.id}
+                    onClick={ displayBookContent }
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
@@ -141,6 +148,7 @@ const Lib = () => {
             </div>
         </div>
         {/* <Books /> */}
+        { bookContent }
         </>
     )
 }
