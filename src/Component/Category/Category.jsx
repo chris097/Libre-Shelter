@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Category.css";
 import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
-// import DisplayOption from "../Modal/Option";
+import DisplayOption from "../Modal/Option";
 import FilterModal from "../Modal/Filter";
 
+
 const Category = () => {
+    const [filterModal, setFilterModal] = useState([]);
+    const [displayOption, setDisplayOption] = useState([]);
+
+    const displayFilterModal = () =>{
+        setFilterModal(<FilterModal />)
+    }
+
+    const displayOptionModal = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setDisplayOption(<DisplayOption />)
+    }
+
     return (
         <div className="category">
             <div className="container">
@@ -18,17 +32,22 @@ const Category = () => {
                         <span>Showing 18 result(s)</span>
                     </div>
                     <div className="filter">
-                       <div className="col light">
+                       <div className="col light"
+                       onClick={displayFilterModal}
+                       >
                             <img src={filterIcon} alt="filterIcon" className="filter-icon"/>
                             <div>Filter</div>
                        </div>
                         <span 
+                        onClick={displayOptionModal}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
                         {/* modal start here... */}
                         {/* <DisplayOption /> */}
-                        <FilterModal />
+                        { displayOption ? displayOption : " " }
+                        {/* <FilterModal /> */}
+                        { filterModal }
                     </div>
                 </div>
             </div>
