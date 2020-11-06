@@ -15,9 +15,7 @@ const Category = () => {
         setFilterModal(<FilterModal />)
     }
 
-    const displayOptionModal = (e) => {
-        e.stopPropagation()
-        e.preventDefault()
+    const displayOptionModal = () => {
         setDisplayOption(<DisplayOption />)
     }
 

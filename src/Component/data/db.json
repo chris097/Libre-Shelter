@@ -23,6 +23,18 @@
         "image": "",
         "likes" : 30,
         "comments": 30
+      },
+      {
+        "id": 3,
+        "title": "Emotional",
+        "author": "Daniel Goleman",
+        "isPublished": 1995,
+        "ISBN": "",
+        "bookUrl": "https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X",
+        "description": "Nawa oh",
+        "image": "",
+        "likes" : 30,
+        "comments": 30
       }
     ],
     "comments": [

@@ -16,7 +16,7 @@ import commentImg from "../Modal/Books/Images/comment-img.svg";
 import "../Modal/Books/Book.css";
 import Modal from "react-modal";
 
-const Books = ({modalIsOpen, setModalIsOpen, book}) => {
+const Books = ({modalIsOpen, setModalIsOpen, book, author, id}) => {
     return(
         <>
         <Modal isOpen={modalIsOpen}
@@ -34,7 +34,7 @@ const Books = ({modalIsOpen, setModalIsOpen, book}) => {
           }}
         >
         <div className="books"></div>
-        <div className="books-container">
+        <div className="books-container" id={id}>
             <div className="column">
                 <div className="fsw-600 fsz-14">The purse mase</div>
                 <div className="close-modal"
@@ -45,7 +45,7 @@ const Books = ({modalIsOpen, setModalIsOpen, book}) => {
                 <div className="book-col-1">
                     <img src={bookImg} alt="book-img"/>
                     <div className="author">
-                        <p>Author : <span>Jamal kasper</span></p>
+                        <p>Author : <span>{author}</span></p>
                     </div>
                     <div className="pubished">
                         <p>Pubished : <span>1996</span></p>
@@ -54,7 +54,7 @@ const Books = ({modalIsOpen, setModalIsOpen, book}) => {
                         <p>Pubisher : <span>Hollman</span></p>
                     </div>
                     <div className="isbn">
-                        <p>ISBN : <span>109383737</span></p>
+                        <p>ISBN : <span>{id}</span></p>
                     </div>
                 </div>
                 <div className="book-col-2">
@@ -80,7 +80,7 @@ const Books = ({modalIsOpen, setModalIsOpen, book}) => {
             <div className="col">
                 <div className="comment-img"><img src={commentImg} alt=""/></div>
                 <div className="write-comment">
-                    <input type="text" id="write-comment" placeholder="Write a comment"/>
+                    <input type="text" id={id} placeholder="Write a comment"/>
                 </div>
             </div>
             <div className="col mg-top-5">
@@ -96,7 +96,7 @@ const Books = ({modalIsOpen, setModalIsOpen, book}) => {
             </div>
         </div>
         </Modal>
-       </>
+        </>
     )
 }
 
@@ -105,6 +105,7 @@ const Lib = () => {
      const [ modalIsOpen, setModalIsOpen] = useState(false)
 
     let url = "http://localhost:3004/books";
+    let id =0;
 
     useEffect(() => {
     axios.get(`${url}`)
@@ -112,9 +113,9 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, [url]);
 
-    const getBookModal = () => {
-        setModalIsOpen(true)
-    }
+    // const getBookModal = (e, id) => {
+    //     setModalIsOpen(true)
+    // }
         
     return(
         <>
@@ -123,9 +124,9 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    id={book.id}
-                    key={book}
-                    onClick={getBookModal}
+                    id={id=1}
+                    value={book.id}
+                    onClick={e => console.log(e.target.id)}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
@@ -150,11 +151,14 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
+                    id={book.id}
                     setModalIsOpen={setModalIsOpen}
                     book={book.description} 
+                    author={book.author}
                 />
                 </>
                 ))}
+
                 <div className="card">
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
