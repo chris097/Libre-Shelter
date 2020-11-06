@@ -10,7 +10,7 @@ const FilterModal = ({
     return(
         <Modal 
         isOpen={openFilterModal}
-        onRequestClose={(e) => setOpenFilterModal(e)}
+        onRequestClose={setOpenFilterModal}
         style={{
             overlay: {
               zIndex: 999,
@@ -19,9 +19,7 @@ const FilterModal = ({
             content: {
                 zIndex: 9999,
                 backgroundColor: ' ',
-                border: ' ',
-                overflow: 'auto',
-                WebkitOverflowScrolling: 'touch'
+                border: ' '
             }
           }}
         >

@@ -4,12 +4,23 @@ import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
 import FilterModal from "../Modal/Filters/Filter";
+import DisplayOption from "../Modal/Option/Option";
 // import DisplayOption from "../Modal/Option";
 // import FilterModal from "../Modal/Filter"
  
 
 const Category = () => {
     const [openFilterModal, setOpenFilterModal] = useState(false);
+    const [openOptionModal, setOpenOptionModal] = useState(false);
+
+    const requestFilterClose = e => {
+        e.preventDefault()
+        setOpenFilterModal(false)
+    }
+
+    const requestOptionClose = e => {
+        setOpenOptionModal(false)
+    }
 
     return (
         <div className="category">
@@ -29,17 +40,20 @@ const Category = () => {
                             <div>Filter</div>
                        </div>
                         <span 
-                        // onClick={displayOptionModal}
+                        onClick={() => setOpenOptionModal(true)}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
                         {/* modal start here... */}
-                        {/* <DisplayOption /> */}
+                        <DisplayOption 
+                        openOptionModal={openOptionModal}
+                        setOpenFilterModal={requestOptionClose}
+                         />
                         {/* { displayOption } */}
                         {/* { openFilterModal } */}
                         <FilterModal 
                         openFilterModal={openFilterModal}
-                        setOpenFilterModal={false}
+                        setOpenFilterModal={requestFilterClose}
                          />
                     </div>
                 </div>
