@@ -1,10 +1,31 @@
 import React from "react";
 import "./Filter.css";
 import arrowDown from "./Icons/angle-down.svg";
+import Modal from "react-modal";
 
-const FilterModal = () => {
+const FilterModal = ({
+    openFilterModal,
+    setOpenFilterModal
+}) => {
     return(
-        <div className="filter-modal">
+        <Modal 
+        isOpen={openFilterModal}
+        onRequestClose={(e) => setOpenFilterModal(e)}
+        style={{
+            overlay: {
+              zIndex: 999,
+              backgroundColor: 'transparent'
+            },
+            content: {
+                zIndex: 9999,
+                backgroundColor: ' ',
+                border: ' ',
+                overflow: 'auto',
+                WebkitOverflowScrolling: 'touch'
+            }
+          }}
+        >
+            <div className="filter-modal">
                 <h4>Filter By</h4>
                 <div className="column current">
                     <div>Aphabetic Order</div>
@@ -22,7 +43,8 @@ const FilterModal = () => {
                     <div>Oldest</div>
                     <img src={arrowDown} alt=""/>
                 </div>
-        </div>
+            </div>
+        </Modal>
     )
 }
 

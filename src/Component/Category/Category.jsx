@@ -3,21 +3,13 @@ import "./Category.css";
 import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
-import DisplayOption from "../Modal/Option";
-import FilterModal from "../Modal/Filter";
-
+import FilterModal from "../Modal/Filters/Filter";
+// import DisplayOption from "../Modal/Option";
+// import FilterModal from "../Modal/Filter"
+ 
 
 const Category = () => {
-    const [filterModal, setFilterModal] = useState(false);
-    const [displayOption, setDisplayOption] = useState(false);
-
-    const displayFilterModal = () =>{
-        setFilterModal(<FilterModal />)
-    }
-
-    const displayOptionModal = () => {
-        setDisplayOption(<DisplayOption />)
-    }
+    const [openFilterModal, setOpenFilterModal] = useState(false);
 
     return (
         <div className="category">
@@ -31,21 +23,24 @@ const Category = () => {
                     </div>
                     <div className="filter">
                        <div className="col light"
-                       onClick={displayFilterModal}
+                       onClick={() => setOpenFilterModal(true)}
                        >
                             <img src={filterIcon} alt="filterIcon" className="filter-icon"/>
                             <div>Filter</div>
                        </div>
                         <span 
-                        onClick={displayOptionModal}
+                        // onClick={displayOptionModal}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
                         {/* modal start here... */}
                         {/* <DisplayOption /> */}
-                        { displayOption }
-                        {/* <FilterModal /> */}
-                        { filterModal }
+                        {/* { displayOption } */}
+                        {/* { openFilterModal } */}
+                        <FilterModal 
+                        openFilterModal={openFilterModal}
+                        setOpenFilterModal={false}
+                         />
                     </div>
                 </div>
             </div>
