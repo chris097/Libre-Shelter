@@ -54,9 +54,15 @@
     width: 20px;
     height: 20px;
 }
-
+/* 
 .moo{
     max-width: 60%;
     position: relative;
     z-index: 666;
+} */
+
+@media screen and (max-width: 400px){
+    .category .category-content .filter{
+        display: none;
+    }
 }
