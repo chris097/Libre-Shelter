@@ -13,15 +13,6 @@ const Category = () => {
     const [openFilterModal, setOpenFilterModal] = useState(false);
     const [openOptionModal, setOpenOptionModal] = useState(false);
 
-    const requestFilterClose = e => {
-        e.preventDefault()
-        setOpenFilterModal(false)
-    }
-
-    const requestOptionClose = e => {
-        setOpenOptionModal(false)
-    }
-
     return (
         <div className="category">
             <div className="container">
@@ -41,19 +32,18 @@ const Category = () => {
                        </div>
                         <span 
                         onClick={() => setOpenOptionModal(true)}
+                        onDoubleClick={() => setOpenOptionModal(false)}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
                         {/* modal start here... */}
                         <DisplayOption 
                         openOptionModal={openOptionModal}
-                        setOpenFilterModal={requestOptionClose}
                          />
                         {/* { displayOption } */}
                         {/* { openFilterModal } */}
                         <FilterModal 
                         openFilterModal={openFilterModal}
-                        setOpenFilterModal={requestFilterClose}
                          />
                     </div>
                 </div>
