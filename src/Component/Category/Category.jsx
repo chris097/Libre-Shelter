@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Category.css";
 import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
@@ -13,6 +13,18 @@ const Category = () => {
     const [openFilterModal, setOpenFilterModal] = useState(false);
     const [openOptionModal, setOpenOptionModal] = useState(false);
 
+    const displayFilterModal = (e) => {
+        e.preventDefault()
+        setOpenFilterModal(<FilterModal />)
+        setOpenOptionModal(false)
+    }
+
+    const displayOptionModal = (e) => {
+        e.preventDefault()
+        setOpenOptionModal(<DisplayOption />)
+        setOpenFilterModal(false)
+    }
+
     return (
         <div className="category">
             <div className="container">
@@ -25,26 +37,25 @@ const Category = () => {
                     </div>
                     <div className="filter">
                        <div className="col light"
-                       onClick={() => setOpenFilterModal(true)}
+                       onClick={displayFilterModal}
                        >
                             <img src={filterIcon} alt="filterIcon" className="filter-icon"/>
                             <div>Filter</div>
                        </div>
                         <span 
-                        onClick={() => setOpenOptionModal(true)}
-                        onDoubleClick={() => setOpenOptionModal(false)}
+                        onClick={displayOptionModal}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
                         {/* modal start here... */}
-                        <DisplayOption 
+                        {/* <DisplayOption 
                         openOptionModal={openOptionModal}
-                         />
-                        {/* { displayOption } */}
-                        {/* { openFilterModal } */}
-                        <FilterModal 
+                         /> */}
+                        { openOptionModal }
+                        { openFilterModal }
+                        {/* <FilterModal 
                         openFilterModal={openFilterModal}
-                         />
+                         /> */}
                     </div>
                 </div>
             </div>

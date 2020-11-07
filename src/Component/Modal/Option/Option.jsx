@@ -1,32 +1,13 @@
 import React from "react";
 import "./Option.css";
-import Modal from "react-modal";
 import gridIcon from "./Icons/grid-icon.svg";
 import listIcon from "./Icons/list-icon.svg";
 import subsIcon from "./Icons/subs-icon.svg";
 import addonIcon from "./Icons/addon-icon.svg";
 import arrowDown from "./Icons/angle-down.svg";
 
-const DisplayOption = ({
-    openOptionModal,
-    setOpenOptionModal
-}) => {
+const DisplayOption = () => {
     return(
-        <Modal 
-        isOpen={openOptionModal}
-        onRequestClose={setOpenOptionModal}
-        style={{
-            overlay: {
-              zIndex: 999,
-              backgroundColor: 'transparent'
-            },
-            content: {
-                zIndex: 9999,
-                backgroundColor: ' ',
-                border: ' '
-            }
-          }}
-        >
             <div className="modal">
             <h4>Display Option</h4>
             <div className="modal-container">
@@ -65,7 +46,6 @@ const DisplayOption = ({
                 </div>
             </div>
         </div>
-        </Modal>
     )
 }
 
