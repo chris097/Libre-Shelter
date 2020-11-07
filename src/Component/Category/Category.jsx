@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Category.css";
 import arrorIcon from "./Icons/Arrow 1.svg";
 import filterIcon from "./Icons/filter-icon.svg";
@@ -37,13 +37,15 @@ const Category = () => {
                     </div>
                     <div className="filter">
                        <div className="col light"
-                       onClick={displayFilterModal}
+                       onClick={() => setOpenFilterModal(' ')}
+                       onMouseEnter={displayFilterModal}
                        >
                             <img src={filterIcon} alt="filterIcon" className="filter-icon"/>
                             <div>Filter</div>
                        </div>
                         <span 
-                        onClick={displayOptionModal}
+                        onClick={() => setOpenOptionModal(' ')}
+                        onMouseEnter={displayOptionModal}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
