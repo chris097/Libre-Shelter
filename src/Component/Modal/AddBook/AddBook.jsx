@@ -2,11 +2,19 @@ import React from "react";
 import Modal from "react-modal";
 import "./AddBook.css";
 import closeIcon from "./Icons/close.svg";
+Modal.setAppElement('body')
 
-
-const BookModal = ({modalIsOpen, setModalIsOpen, mySubmitHandler, bo, setBo, tittle, setTittle}) =>{
+const BookModal = ({
+    modalIsOpen, 
+    setModalIsOpen, 
+    mySubmitHandler, 
+    author, 
+    setAuthor, 
+    tittle, 
+    setTittle}) =>{
     return(
-        <Modal isOpen={modalIsOpen}
+        <Modal 
+        isOpen={modalIsOpen}
         style={{
             overlay: {
               zIndex: 999,
@@ -35,14 +43,14 @@ const BookModal = ({modalIsOpen, setModalIsOpen, mySubmitHandler, bo, setBo, tit
                     <div><input 
                     value={tittle}
                     key={tittle}
-                    onChange={(e) => setTittle(e.target.value)}
+                    onChange={ e => setTittle(e.target.value) }
                     type="text" 
                     name="tittle" 
                     id="tittle"/></div>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
-                    value={bo}
-                    onChange={(e) => setBo(e.target.value)}
+                    value={author}
+                    onChange={ e => setAuthor(e.target.value) }
                     type="text" 
                     name="author" 
                     id="author"/></div>
