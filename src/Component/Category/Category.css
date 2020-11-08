@@ -61,6 +61,11 @@
     z-index: 666;
 } */
 
+.hambuger-menu{
+    position: fixed;
+    
+}
+
 @media screen and (max-width: 400px){
     .category{
         margin-top: 64px;
@@ -68,5 +73,8 @@
     .category .category-content .filter,
     .category .category-content .fiction{
         display: none;
+    }
+    .mobile-x{
+        margin-left: 40px;
     }
 }

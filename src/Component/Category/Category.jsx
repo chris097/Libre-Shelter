@@ -29,7 +29,8 @@ const Category = () => {
         <div className="category">
             <div className="container">
                 <div className="category-content">
-                    <div className="fsz-20 pad-top-5">Category</div>
+                <div className="hambuger-menu">here</div>
+                    <div className="fsz-20 pad-top-5 mobile-x">Category</div>
                     <div className="fiction">
                         <span className="primary-color">Fiction</span>
                         <span><img src={arrorIcon} alt="arror-icon"/></span>
