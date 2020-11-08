@@ -78,7 +78,6 @@
 }
 
 @media screen and (max-width: 768px){
-    .header .add-book,
     .header .searchForm{
         display: none;
     }

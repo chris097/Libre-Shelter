@@ -4,6 +4,7 @@
     position: relative;
     z-index: 333;
     padding-top: 150px;
+    margin-bottom: 50px;
 }
 
 .lib .cards-container{
