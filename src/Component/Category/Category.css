@@ -62,7 +62,11 @@
 } */
 
 @media screen and (max-width: 400px){
-    .category .category-content .filter{
+    .category{
+        margin-top: 64px;
+    }
+    .category .category-content .filter,
+    .category .category-content .fiction{
         display: none;
     }
 }
