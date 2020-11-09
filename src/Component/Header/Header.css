@@ -77,6 +77,17 @@
     margin-top: 3px;
 }
 
+.mobile-search{
+    position: absolute;
+    right: 55px;
+    top: 21.8px;
+}
+
+.mobile-search > img{
+    width: 25px;
+    height: 25px;
+}
+
 @media screen and (max-width: 1050px){
     .header .searchForm{
         width: 50%;
@@ -85,6 +96,23 @@
 
 @media screen and (max-width: 768px){
     .header .searchForm{
+        display: none;
+    }
+}
+
+@media all and (max-width: 400px){
+    .header .add-book{
+        width: 30px;
+        height: 30px;
+        border-radius: 2px;
+        text-align: center;
+        padding: 5px;
+        margin-top: 10px;
+    }
+    .header .add-book > img{
+        width: 100%;
+    }
+    .add-book > span{
         display: none;
     }
 }

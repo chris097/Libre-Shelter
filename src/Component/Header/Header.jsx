@@ -26,6 +26,10 @@ const Header = () =>{
                         <img src={searchFormIcon} alt="search-icon"/>
                     <input type="search" id="search" placeholder="Search book"/>
                     </div>
+                    {/* mobile */}
+                    <div className="mobile-search">
+                        <img src={searchFormIcon} alt=""/>
+                    </div>
                     <button 
                     className="add-book"
                     onClick={() => setModalIsOpen(true)}
