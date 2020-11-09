@@ -77,6 +77,12 @@
     margin-top: 3px;
 }
 
+@media screen and (max-width: 1050px){
+    .header .searchForm{
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 768px){
     .header .searchForm{
         display: none;

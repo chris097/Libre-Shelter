@@ -5,6 +5,9 @@ import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
 import FilterModal from "../Modal/Filters/Filter";
 import DisplayOption from "../Modal/Option/Option";
+import openMenu from "./Icons/menu.png";
+import dotIcon from "./Icons/dot-icon.svg";
+import Sidebar from "../Sidebar/Sidebar"
 // import DisplayOption from "../Modal/Option";
 // import FilterModal from "../Modal/Filter"
  
@@ -26,10 +29,16 @@ const Category = () => {
     }
 
     return (
+        <>
         <div className="category">
             <div className="container">
+            <div 
+            className="open-menu"
+            onClick={() => <Sidebar />}
+            >
+                <img src={openMenu} alt=""/>
+            </div>
                 <div className="category-content">
-                <div className="hambuger-menu">here</div>
                     <div className="fsz-20 pad-top-5 mobile-x">Category</div>
                     <div className="fiction">
                         <span className="primary-color">Fiction</span>
@@ -59,10 +68,15 @@ const Category = () => {
                         {/* <FilterModal 
                         openFilterModal={openFilterModal}
                          /> */}
+                         {/* mobile */}
                     </div>
+                </div>
+                <div className="dot-menu">
+                    <img src={dotIcon} alt=""/>
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

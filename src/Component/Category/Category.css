@@ -61,9 +61,20 @@
     z-index: 666;
 } */
 
-.hambuger-menu{
-    position: fixed;
-    
+.open-menu > img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-top: 20px;
+    visibility: hidden;
+}
+.dot-menu > img{
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    visibility: hidden;
 }
 
 @media screen and (max-width: 400px){
@@ -75,6 +86,16 @@
         display: none;
     }
     .mobile-x{
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .open-menu > img,
+    .dot-menu > img{
+        visibility: visible;
+    }
+    .category-content .mobile-x{
         margin-left: 40px;
     }
 }
