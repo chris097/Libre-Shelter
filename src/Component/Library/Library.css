@@ -57,7 +57,7 @@
 
 @media screen and (max-width: 1192px){
     .lib{
-        max-width: 100%;
+        max-width: 95%;
     }
     .lib .cards-container{
         grid-template-columns: repeat(3, 1fr);
