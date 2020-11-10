@@ -7,7 +7,9 @@ import FilterModal from "../Modal/Filters/Filter";
 import DisplayOption from "../Modal/Option/Option";
 import openMenu from "./Icons/menu.png";
 import dotIcon from "./Icons/dot-icon.svg";
-import Sidebar from "../Sidebar/Sidebar"
+import Sidebar from "../Sidebar/Sidebar";
+import "../Sidebar/Sidebar.css";
+import { defaultStyles } from "react-modal";
 // import DisplayOption from "../Modal/Option";
 // import FilterModal from "../Modal/Filter"
  
@@ -34,7 +36,7 @@ const Category = () => {
             <div className="container">
             <div 
             className="open-menu"
-            onClick={() => <Sidebar />}
+            onClick={() => defaultStyles={sidebar:{display: "block"}}}
             >
                 <img src={openMenu} alt=""/>
             </div>
