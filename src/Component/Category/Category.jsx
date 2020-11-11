@@ -5,13 +5,22 @@ import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
 import FilterModal from "../Modal/Filters/Filter";
 import DisplayOption from "../Modal/Option/Option";
-import openMenu from "./Icons/menu.png";
+// import openMenu from "./Icons/menu.png";
 import dotIcon from "./Icons/dot-icon.svg";
-import Sidebar from "../Sidebar/Sidebar";
-import "../Sidebar/Sidebar.css";
-import { defaultStyles } from "react-modal";
 // import DisplayOption from "../Modal/Option";
 // import FilterModal from "../Modal/Filter"
+
+// const MediaQuery = () => {
+//     return(
+//         <div 
+//             className="open-menu"  
+//             onClick={() => console.log('something was clicked...')} 
+//         >
+//             <img src={openMenu} alt=""/>
+//         </div>
+//     )
+// }
+
  
 
 const Category = () => {
@@ -19,27 +28,21 @@ const Category = () => {
     const [openOptionModal, setOpenOptionModal] = useState(false);
 
     const displayFilterModal = (e) => {
-        e.preventDefault()
         setOpenFilterModal(<FilterModal />)
-        setOpenOptionModal(false)
-    }
+        setOpenOptionModal()
+    
 
     const displayOptionModal = (e) => {
         e.preventDefault()
         setOpenOptionModal(<DisplayOption />)
-        setOpenFilterModal(false)
     }
 
     return (
         <>
         <div className="category">
             <div className="container">
-            <div 
-            className="open-menu"
-            onClick={() => defaultStyles={sidebar:{display: "block"}}}
-            >
-                <img src={openMenu} alt=""/>
-            </div>
+            {/* media */}
+            <MediaQuery />
                 <div className="category-content">
                     <div className="fsz-20 pad-top-5 mobile-x">Category</div>
                     <div className="fiction">
@@ -49,15 +52,13 @@ const Category = () => {
                     </div>
                     <div className="filter">
                        <div className="col light"
-                       onClick={() => setOpenFilterModal(' ')}
-                       onMouseEnter={displayFilterModal}
+                       onClick={displayFilterModal}
                        >
                             <img src={filterIcon} alt="filterIcon" className="filter-icon"/>
                             <div>Filter</div>
                        </div>
                         <span 
-                        onClick={() => setOpenOptionModal(' ')}
-                        onMouseEnter={displayOptionModal}
+                        onClick={displayOptionModal}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
@@ -65,8 +66,8 @@ const Category = () => {
                         {/* <DisplayOption 
                         openOptionModal={openOptionModal}
                          /> */}
-                        { openOptionModal }
-                        { openFilterModal }
+                        {/* {openOptionModal}
+                        { openFilterModal } */}
                         {/* <FilterModal 
                         openFilterModal={openFilterModal}
                          /> */}
