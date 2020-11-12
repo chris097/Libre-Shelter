@@ -129,3 +129,9 @@
     border-bottom: 1px solid #8990A6;
 }
 
+@media screen and (max-width: 400px){
+    .books-container{
+        width: 95%;
+    }
+}
+

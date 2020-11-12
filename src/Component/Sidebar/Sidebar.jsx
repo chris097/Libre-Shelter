@@ -5,7 +5,9 @@ import "./Sidebar.css";
 const SideBar = () => {
     return(
         <>
-            <div className="sidebar">
+            <div 
+            className="sidebar"
+            >
                 <ul className="sidebar-container">
                     <li>A curated list of every book ever written</li>
                     <li>Fa Fantacy</li>

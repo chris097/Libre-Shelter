@@ -22,3 +22,9 @@
     border-radius: 10px;
     color: #ffffff;
 }
+
+@media screen and (max-width: 400px){
+    .filter-modal{
+        right: 50px;
+    }
+}

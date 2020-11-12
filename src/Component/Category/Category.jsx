@@ -5,21 +5,11 @@ import filterIcon from "./Icons/filter-icon.svg";
 import eyeIcon from "./Icons/eye-icon.svg";
 import FilterModal from "../Modal/Filters/Filter";
 import DisplayOption from "../Modal/Option/Option";
-// import openMenu from "./Icons/menu.png";
+import openMenu from "./Icons/menu.png";
 import dotIcon from "./Icons/dot-icon.svg";
 // import DisplayOption from "../Modal/Option";
 // import FilterModal from "../Modal/Filter"
 
-// const MediaQuery = () => {
-//     return(
-//         <div 
-//             className="open-menu"  
-//             onClick={() => console.log('something was clicked...')} 
-//         >
-//             <img src={openMenu} alt=""/>
-//         </div>
-//     )
-// }
 
  
 
@@ -29,12 +19,13 @@ const Category = () => {
 
     const displayFilterModal = (e) => {
         setOpenFilterModal(<FilterModal />)
-        setOpenOptionModal()
+        setOpenOptionModal(" ")
     }
 
     const displayOptionModal = (e) => {
         e.preventDefault()
         setOpenOptionModal(<DisplayOption />)
+        setOpenFilterModal(" ")
     }
 
     return (
@@ -42,7 +33,11 @@ const Category = () => {
         <div className="category">
             <div className="container">
             {/* media */}
-            <MediaQuery />
+            <div 
+                className="open-menu"  
+                onClick={() => console.log('something was clicked...')}          >
+                <img src={openMenu} alt=""/>
+             </div>
                 <div className="category-content">
                     <div className="fsz-20 pad-top-5 mobile-x">Category</div>
                     <div className="fiction">
@@ -55,23 +50,15 @@ const Category = () => {
                        onClick={displayFilterModal}
                        >
                             <img src={filterIcon} alt="filterIcon" className="filter-icon"/>
-                            <div>Filter</div>
+                            <div className="filt">Filter</div>
                        </div>
                         <span 
                         onClick={displayOptionModal}
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
-                        {/* modal start here... */}
-                        {/* <DisplayOption 
-                        openOptionModal={openOptionModal}
-                         /> */}
                         {openOptionModal}
                         { openFilterModal }
-                        {/* <FilterModal 
-                        openFilterModal={openFilterModal}
-                         /> */}
-                         {/* mobile */}
                     </div>
                 </div>
                 <div className="dot-menu">
