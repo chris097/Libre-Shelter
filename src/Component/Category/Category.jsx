@@ -30,7 +30,7 @@ const Category = () => {
     const displayFilterModal = (e) => {
         setOpenFilterModal(<FilterModal />)
         setOpenOptionModal()
-    
+    }
 
     const displayOptionModal = (e) => {
         e.preventDefault()
@@ -66,8 +66,8 @@ const Category = () => {
                         {/* <DisplayOption 
                         openOptionModal={openOptionModal}
                          /> */}
-                        {/* {openOptionModal}
-                        { openFilterModal } */}
+                        {openOptionModal}
+                        { openFilterModal }
                         {/* <FilterModal 
                         openFilterModal={openFilterModal}
                          /> */}
