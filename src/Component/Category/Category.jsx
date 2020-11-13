@@ -25,12 +25,18 @@ const Category = () => {
     const displayFilterModal = (e) => {
         setOpenFilterModal(<FilterModal />)
         setOpenOptionModal(" ")
+        engine('.sidebar', 'none')
+        engine('.open-menu', 'block')
+        engine('.close-menu', 'none')
     }
 
     const displayOptionModal = (e) => {
         e.preventDefault()
         setOpenOptionModal(<DisplayOption />)
         setOpenFilterModal(" ")
+        engine('.sidebar', 'none')
+        engine('.open-menu', 'block')
+        engine('.close-menu', 'none')
     }
 
     const menuOpen = () => {
@@ -40,6 +46,8 @@ const Category = () => {
         const div = document.querySelector('.close-menu  > img')
         div.style.display = 'block'
         console.log(div)
+        setOpenFilterModal(' ')
+        setOpenOptionModal(' ')
     }
 
 
