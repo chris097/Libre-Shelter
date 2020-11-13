@@ -66,7 +66,14 @@
     height: 30px;
     position: absolute;
     margin-top: 20px;
-    /* visibility: hidden; */
+    display: none;
+}
+.close-menu > img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-top: 20px;
+    display: none;
 }
 .dot-menu > img{
     width: 30px;
@@ -88,10 +95,6 @@
     .mobile-x{
         margin-left: 40px;
     }
-    .category .category-content .filter > img{
-        width: 10px;
-        height: 10px;
-    }
     .category .category-content .filter .col{
         width: 40px;
         height: 40px;
@@ -104,7 +107,7 @@
 
 @media screen and (max-width: 1050px){
     .open-menu > img{
-        visibility: visible;
+        display: block;
     }
     .category-content .mobile-x{
         margin-left: 40px;
