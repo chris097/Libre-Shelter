@@ -6,14 +6,20 @@
     position: fixed;
     z-index: 555;
     left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sidebar .sidebar-container{
-    padding-top: 150px;
+    padding-top: 135px;
 }
 
 .sidebar ul li{
     margin: 12px 0;
+    color: #777777;
+    font-size: 13px;
+    list-style: none;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 1050px){
