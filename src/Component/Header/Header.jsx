@@ -6,10 +6,25 @@ import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import BookModal from "../Modal/AddBook/AddBook";
 
+const SearchForm = ({search}) => {
+    return(
+        <>
+        <div className="search-box">
+            <div>Recent Searches</div>
+            <div className="searchBox">
+                {/* <img src={searchFormIcon} alt="search-icon"/> */}
+                <input type="search" id="search" value={search}/>
+            </div>
+        </div>
+        </>
+    )
+}
+
 const Header = () =>{
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [tittle, setTittle] = useState('');
     const [book, setBook] = useState('')
+    const [search, setSearch] = useState([])
 
     const mySubmitHandler = (e) =>{
         e.stopPropagation()
@@ -22,10 +37,16 @@ const Header = () =>{
             <div className="container">
                 <div className="header-content">
                     <div className="logo">LibraShelter</div>
-                    <div className="searchForm">
+                    <div 
+                    className="searchForm"
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                    onBlur={e => setSearch(e.target.value)}
+                    >
                         <img src={searchFormIcon} alt="search-icon"/>
-                    <input type="search" id="search" placeholder="Search book"/>
+                        <input type="search" id="search" placeholder="Search book"/>
                     </div>
+                    <SearchForm  search={search}/>
                     {/* mobile */}
                     <div className="mobile-search">
                         <img src={searchFormIcon} alt=""/>

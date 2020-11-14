@@ -25,7 +25,7 @@ const Category = () => {
     const displayFilterModal = (e) => {
         setOpenFilterModal(<FilterModal />)
         setOpenOptionModal(" ")
-        engine('.sidebar', 'none')
+        // engine('.sidebar', 'none')
         engine('.open-menu', 'block')
         engine('.close-menu', 'none')
     }
@@ -34,7 +34,7 @@ const Category = () => {
         e.preventDefault()
         setOpenOptionModal(<DisplayOption />)
         setOpenFilterModal(" ")
-        engine('.sidebar', 'none')
+        // engine('.sidebar', 'none')
         engine('.open-menu', 'block')
         engine('.close-menu', 'none')
     }
