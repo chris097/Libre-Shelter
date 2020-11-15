@@ -8,8 +8,7 @@ import DisplayOption from "../Modal/Option/Option";
 import openMenu from "./Icons/menu.png";
 import dotIcon from "./Icons/dot-icon.svg";
 import closeMenu from "./Icons/close.png";
-// import DisplayOption from "../Modal/Option";
-// import FilterModal from "../Modal/Filter"
+
 
 const engine = (name, func) => {
     return(
@@ -26,20 +25,13 @@ const Category = () => {
 
     const displayFilterModal = (e) => {
         setShow1(" ")
-        // engine('.sidebar', 'none')
-        // engine('.open-menu', 'block')
-        // engine('.close-menu', 'none')
         setOpenFilterModal(!openFilterModal)
         setShow(!show)
     }
 
     const displayOptionModal = (e) => {
         e.preventDefault()
-        // setOpenOptionModal(<DisplayOption />)
         setShow(" ")
-        // engine('.sidebar', 'none')
-        // engine('.open-menu', 'block')
-        // engine('.close-menu', 'none')
         setOpenOptionModal(!openOptionModal)
         setShow1(!show1)
     }
@@ -51,8 +43,8 @@ const Category = () => {
         const div = document.querySelector('.close-menu  > img')
         div.style.display = 'block'
         console.log(div)
-        setOpenFilterModal(' ')
-        setOpenOptionModal(' ')
+        setShow(' ')
+        setShow1(' ')
     }
 
 
@@ -99,9 +91,7 @@ const Category = () => {
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
-                        {/* {openOptionModal} */}
                         {!show1 ? <DisplayOption /> : show1}
-                        {/* { openFilterModal } */}
                         {!show ? <FilterModal /> : show}
                     </div>
                 </div>

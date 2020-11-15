@@ -6,7 +6,7 @@ import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import BookModal from "../Modal/AddBook/AddBook";
 
-const SearchForm = ({search, searchCol}) => {
+const SearchForm = ({ search }) => {
     return(
         <>
         <div className="search-box">
@@ -26,15 +26,11 @@ const Header = () =>{
     const [tittle, setTittle] = useState('');
     const [book, setBook] = useState('')
     const [search, setSearch] = useState([])
+    const [searchBox, setSearchBox] = useState([])
 
     const mySubmitHandler = (e) =>{
         e.stopPropagation()
         console.log(tittle, book)
-    }
-
-    const searchItems = e => {
-        e.preventDefault()
-        setSearch(e.target.value)
     }
 
     return (
@@ -46,15 +42,19 @@ const Header = () =>{
                     <div 
                     className="searchForm"
                     value={search}
-                    onChange={searchItems}
-                    onBlur={searchItems}
+                    onChange={e => setSearch(e.target.value)}
+                    onBlur={e => setSearch(e.target.value)}
                     >
                         <img src={searchFormIcon} alt="search-icon"/>
-                        <input type="search" id="search" placeholder="Search book"/>
+                        <input 
+                        type="search" 
+                        id="search" 
+                        placeholder="Search book"
+                        onClick={() => setSearchBox(!searchBox)}
+                        value={search}
+                        />
                     </div>
-                    <SearchForm  
-                    search={search}
-                    />
+                    {!searchBox ? <SearchForm search={search} /> : searchBox}
                     {/* mobile */}
                     <div className="mobile-search">
                         <img src={searchFormIcon} alt=""/>
