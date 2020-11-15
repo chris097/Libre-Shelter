@@ -21,22 +21,27 @@ const engine = (name, func) => {
 const Category = () => {
     const [openFilterModal, setOpenFilterModal] = useState(false);
     const [openOptionModal, setOpenOptionModal] = useState(false);
+    const [show, setShow] = useState(true)
+    const [show1, setShow1] = useState(true)
 
     const displayFilterModal = (e) => {
-        setOpenFilterModal(<FilterModal />)
-        setOpenOptionModal(" ")
+        setShow1(" ")
         // engine('.sidebar', 'none')
-        engine('.open-menu', 'block')
-        engine('.close-menu', 'none')
+        // engine('.open-menu', 'block')
+        // engine('.close-menu', 'none')
+        setOpenFilterModal(!openFilterModal)
+        setShow(!show)
     }
 
     const displayOptionModal = (e) => {
         e.preventDefault()
-        setOpenOptionModal(<DisplayOption />)
-        setOpenFilterModal(" ")
+        // setOpenOptionModal(<DisplayOption />)
+        setShow(" ")
         // engine('.sidebar', 'none')
-        engine('.open-menu', 'block')
-        engine('.close-menu', 'none')
+        // engine('.open-menu', 'block')
+        // engine('.close-menu', 'none')
+        setOpenOptionModal(!openOptionModal)
+        setShow1(!show1)
     }
 
     const menuOpen = () => {
@@ -94,8 +99,10 @@ const Category = () => {
                         className="light">
                             <img src={eyeIcon} alt="eyeIcon"/>
                         </span>
-                        {openOptionModal}
-                        { openFilterModal }
+                        {/* {openOptionModal} */}
+                        {!show1 ? <DisplayOption /> : show1}
+                        {/* { openFilterModal } */}
+                        {!show ? <FilterModal /> : show}
                     </div>
                 </div>
                 <div className="dot-menu">

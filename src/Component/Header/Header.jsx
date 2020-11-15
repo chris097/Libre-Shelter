@@ -6,7 +6,7 @@ import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import BookModal from "../Modal/AddBook/AddBook";
 
-const SearchForm = ({search}) => {
+const SearchForm = ({search, searchCol}) => {
     return(
         <>
         <div className="search-box">
@@ -15,6 +15,7 @@ const SearchForm = ({search}) => {
                 {/* <img src={searchFormIcon} alt="search-icon"/> */}
                 <input type="search" id="search" value={search}/>
             </div>
+            <p>{search}</p>
         </div>
         </>
     )
@@ -31,6 +32,11 @@ const Header = () =>{
         console.log(tittle, book)
     }
 
+    const searchItems = e => {
+        e.preventDefault()
+        setSearch(e.target.value)
+    }
+
     return (
         <>
         <div className="header">
@@ -40,13 +46,15 @@ const Header = () =>{
                     <div 
                     className="searchForm"
                     value={search}
-                    onChange={e => setSearch(e.target.value)}
-                    onBlur={e => setSearch(e.target.value)}
+                    onChange={searchItems}
+                    onBlur={searchItems}
                     >
                         <img src={searchFormIcon} alt="search-icon"/>
                         <input type="search" id="search" placeholder="Search book"/>
                     </div>
-                    <SearchForm  search={search}/>
+                    <SearchForm  
+                    search={search}
+                    />
                     {/* mobile */}
                     <div className="mobile-search">
                         <img src={searchFormIcon} alt=""/>

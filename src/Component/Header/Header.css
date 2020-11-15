@@ -42,19 +42,19 @@
     outline: none;
 }
 .header .search-box{
-    width: 62.98%;
+    width: 60.98%;
     height: 300px;
     position: absolute;
     top: 224px;
     transform: translate(-50%, -50%);
-    right: 50%;
-    left: 50%;
+    right: 51.5%;
+    left: 48.5%;
     background-color: #ffffff;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
     border: none;
     outline: none;
     outline: none;
-    padding-left: 30px;
+    padding-left: 15px;
     border-radius: 5px;
 }
 
