@@ -57,9 +57,9 @@ const Header = () =>{
                     </div>
                     {!searchBox ? <SearchForm search={search} /> : searchBox}
                     {/* mobile */}
-                    <div className="mobile-search">
+                    {/* <div className="mobile-search">
                         <img src={searchFormIcon} alt=""/>
-                    </div>
+                    </div> */}
                     <button 
                     className="add-book"
                     onClick={() => setModalIsOpen(true)}
