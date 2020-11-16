@@ -11,7 +11,7 @@ const SearchForm = ({ search }) => {
         <>
         <div className="searchBox-col"></div>
         <div className="search-box">
-            <div>Recent Searches</div>
+            <div className="recent-search">Recent Searches</div>
             <div className="searchBox">
                 <input type="search" id="search" value={search}/>
                 <button type="submit" value={search}>Select</button>
