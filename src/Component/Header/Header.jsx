@@ -13,8 +13,14 @@ const SearchForm = ({ search }) => {
         <div className="search-box">
             <div className="recent-search">Recent Searches</div>
             <div className="searchBox">
-                <input type="search" id="search" value={search}/>
-                <button type="submit" value={search}>Select</button>
+                <input 
+                type="search" 
+                id="search"
+                 value={search}/>
+                <button 
+                type="submit" 
+                value={search}
+                >Select</button>
             </div>
             <p>{search}</p>
         </div>

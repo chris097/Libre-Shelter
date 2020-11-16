@@ -42,7 +42,7 @@ const Category = () => {
         engine('.close-menu', 'block')
         const div = document.querySelector('.close-menu  > img')
         div.style.display = 'block'
-        console.log(div)
+        // console.log(div)
         setShow(' ')
         setShow1(' ')
     }
@@ -53,7 +53,7 @@ const Category = () => {
         engine('.close-menu', 'none')
         const div = document.querySelector('.open-menu')
         div.style.display = 'block'
-        console.log(div)
+        // console.log(div)
     }
 
     return (
