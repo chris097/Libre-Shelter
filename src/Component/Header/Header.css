@@ -33,13 +33,15 @@
     outline: none;
 }
 .header .searchBox{
-    width: 750px;
+    width: 96.5%;
     height: 43px;
     border: none;
     background-color: #F2F4F7;
     border-radius: 30px;
     padding: 10px 20px;
     outline: none;
+    z-index: 999999;
+    position: relative;
 }
 .header .search-box{
     width: 60.98%;
@@ -70,17 +72,6 @@
     background-color: #ffffff;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
 } */
-.header .searchBox input{
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    padding-top: -20px;
-    position: absolute;
-    font-size: 16px;
-    padding-left: 10px;
-    outline: none;
-}
 .header .searchForm input{
     width: 100%;
     border: none;
@@ -91,6 +82,31 @@
     font-size: 16px;
     padding-left: 10px;
     outline: none;
+}
+.header .searchBox input{
+    width: 85%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding-top: -20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.header .searchBox button{
+    background-color: transparent;
+    border: none;
+    color: rgba(54, 59, 61, 0.29);
+}
+
+.header .searchBox-col{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.315);
+    position: fixed;
+    z-index: 1;
 }
 
 .header .searchForm :placeholder-shown{
@@ -143,8 +159,14 @@
 }
 
 @media screen and (max-width: 768px){
-    .header .searchForm{
-        display: none;
+    /* .header .searchForm{
+        
+    } */
+    .header .add-book{
+        width: 120px;
+        height: 35px;
+        padding: 6px 8px;
+        margin-top: 7px;
     }
 }
 
@@ -162,5 +184,8 @@
     }
     .add-book > span{
         display: none;
+    }
+    .mobile-search > img{
+        margin-right: 2px;
     }
 }

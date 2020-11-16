@@ -9,11 +9,12 @@ import BookModal from "../Modal/AddBook/AddBook";
 const SearchForm = ({ search }) => {
     return(
         <>
+        <div className="searchBox-col"></div>
         <div className="search-box">
             <div>Recent Searches</div>
             <div className="searchBox">
-                {/* <img src={searchFormIcon} alt="search-icon"/> */}
                 <input type="search" id="search" value={search}/>
+                <button type="submit" value={search}>Select</button>
             </div>
             <p>{search}</p>
         </div>
