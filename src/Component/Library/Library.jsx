@@ -23,9 +23,7 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, [url]);
 
-    // const getBookModal = (e, id) => {
-    //     setModalIsOpen(true)
-    // }
+    
         
     return(
         <>
