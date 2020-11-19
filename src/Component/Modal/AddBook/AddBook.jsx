@@ -16,9 +16,9 @@ const BookModal = ({
     // setTittle
 }) =>{
     const [updateData, setUpdateData] = useState({
-        title: "",
-        author: "",
-        description: ""
+        title: " ",
+        author: " ",
+        description: " "
     })
 
         const mySubmitHandler = (e) =>{
@@ -30,6 +30,7 @@ const BookModal = ({
         }
 
         const eHandler = (e) => {
+            e.preventDefault()
             const newData = {...updateData}
             newData[e.target.id]=e.target.value
             setUpdateData(newData)
