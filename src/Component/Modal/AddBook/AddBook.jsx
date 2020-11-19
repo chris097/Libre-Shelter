@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import "./AddBook.css";
 import closeIcon from "./Icons/close.svg";
+import {url} from "../../Library/Library";
+import axios from 'axios';
 Modal.setAppElement('body')
 
 const BookModal = ({
     modalIsOpen, 
     setModalIsOpen, 
-    mySubmitHandler, 
-    author, 
-    setAuthor, 
-    tittle, 
-    setTittle}) =>{
+    // mySubmitHandler, 
+    // author, 
+    // setAuthor, 
+    // tittle, 
+    // setTittle
+}) =>{
+    const [updateData, setUpdateData] = useState({
+        title: "",
+        author: "",
+        description: ""
+    })
+
+        const mySubmitHandler = (e) =>{
+            e.preventDefault();
+            axios.post(url, updateData)
+            .then(res => {
+                console.log(res.data)
+            })
+        }
+
+        const eHandler = (e) => {
+            const newData = {...updateData}
+            newData[e.target.id]=e.target.value
+            setUpdateData(newData)
+        }
 
     return(
         <Modal 
@@ -42,27 +64,33 @@ const BookModal = ({
                 <form action="" onSubmit={mySubmitHandler}>
                     <label htmlFor="tittle">Tittle</label>
                     <div><input 
-                    value={tittle}
-                    key={tittle}
-                    onChange={ e => setTittle(e.target.value) }
+                    value={updateData.title}
+                    key={updateData.title}
+                    onChange={ e => eHandler(e) }
                     type="text" 
                     name="tittle" 
-                    id="tittle"/></div>
+                    id="title"/></div>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
-                    value={author}
-                    onChange={ e => setAuthor(e.target.value) }
+                    value={updateData.author}
+                    onChange={ e => eHandler(e) }
                     type="text" 
                     name="author" 
                     id="author"/></div>
-                    <label htmlFor="tittle">Book Url</label>
+                    <label htmlFor="book">Book Url</label>
                     <div><input type="text" name="book" id="book"/></div>
-                    <label htmlFor="tittle">Published</label>
+                    <label htmlFor="published">Published</label>
                     <div><input type="text" name="published" id="published"/></div>
                     <label htmlFor="tittle">ISNB</label>
                     <div><input type="text" name="isnb" id="isnb"/></div>
                     <label htmlFor="tittle">Description</label>
-                    <div><input type="text" name="desc" id="desc"/></div>
+                    <div><input 
+                    type="text" 
+                    name="desc" 
+                    id="desc"
+                    value={updateData.description}
+                    onChange={e => eHandler(e)}
+                    /></div>
                     <button type="submit">Add</button>
                 </form>
             </div>

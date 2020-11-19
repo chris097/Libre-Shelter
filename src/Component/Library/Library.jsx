@@ -10,22 +10,19 @@ import msgIcon from "./Icons/msg-icon.svg";
 import axios from "axios";
 import Books from "../Modal/Books/Books";
 
+export let url = "http://localhost:3004/books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
      const [ modalIsOpen, setModalIsOpen] = useState(false)
 
-    let url = "http://localhost:3004/books";
-
     useEffect(() => {
     axios.get(`${url}`)
     .then(res => setBooks(res.data))
     .catch(err => console.log('Something went wrong...', err.message))
-    }, [url]);
+    }, []);
 
-    const PostBook = (title, id) => {
-        setBooks([...books, {title, id}])
-    }
+    
         
     return(
         <>
@@ -58,9 +55,6 @@ const Lib = () => {
                         </div>
                     </div>
                 </div>
-
-                <PostBook title={book.title} />
-
                 <Books
                     modalIsOpen={modalIsOpen}
                     id={book.id}

@@ -30,15 +30,10 @@ const SearchForm = ({ search }) => {
 
 const Header = () =>{
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [tittle, setTittle] = useState('');
+    // const [tittle, setTittle] = useState('');
     const [book, setBook] = useState('')
     const [search, setSearch] = useState([])
     const [searchBox, setSearchBox] = useState([])
-
-    const mySubmitHandler = () => {
-        console.log(tittle)
-    }
-
 
     return (
         <>
@@ -81,10 +76,10 @@ const Header = () =>{
         <BookModal 
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
-        mySubmitHandler={mySubmitHandler}
+        // mySubmitHandler={mySubmitHandler}
         book={book}
         setBook={setBook}
-        setTittle={setTittle}
+        // setTittle={setTittle}
          />
         </>
     )
