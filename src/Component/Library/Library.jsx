@@ -23,7 +23,9 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, [url]);
 
-    
+    const PostBook = (title, id) => {
+        setBooks([...books, {title, id}])
+    }
         
     return(
         <>
@@ -56,6 +58,9 @@ const Lib = () => {
                         </div>
                     </div>
                 </div>
+
+                <PostBook title={book.title} />
+
                 <Books
                     modalIsOpen={modalIsOpen}
                     id={book.id}

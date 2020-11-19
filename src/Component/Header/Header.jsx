@@ -35,10 +35,10 @@ const Header = () =>{
     const [search, setSearch] = useState([])
     const [searchBox, setSearchBox] = useState([])
 
-    const mySubmitHandler = (e) =>{
-        e.stopPropagation()
-        console.log(tittle, book)
+    const mySubmitHandler = () => {
+        console.log(tittle)
     }
+
 
     return (
         <>
