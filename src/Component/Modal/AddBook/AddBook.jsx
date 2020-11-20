@@ -30,7 +30,7 @@ const BookModal = ({
             .then(res => {
                 console.log(res.data)
             })
-            .catch(err => console.error('Not updating', err.message))
+            .catch(err => console.error(`Not updating..., ${err.message}!`))
         }
 
         const eHandler = (e) => {
