@@ -16,9 +16,12 @@ const BookModal = ({
     // setTittle
 }) =>{
     const [updateData, setUpdateData] = useState({
-        title: " ",
-        author: " ",
-        description: " "
+        title: "",
+        author: "",
+        bookUrl: "",
+        isPublished: "",
+        ISBN: "",
+        description: ""
     })
 
         const mySubmitHandler = (e) =>{
@@ -27,12 +30,14 @@ const BookModal = ({
             .then(res => {
                 console.log(res.data)
             })
+            .catch(err => console.error('Not updating', err.message))
         }
 
         const eHandler = (e) => {
             e.preventDefault()
+            e.stopPropagation()
             const newData = {...updateData}
-            newData[e.target.id]=e.target.value
+            newData[e.target.id] = e.target.value
             setUpdateData(newData)
         }
 
@@ -66,31 +71,61 @@ const BookModal = ({
                     <label htmlFor="tittle">Tittle</label>
                     <div><input 
                     value={updateData.title}
-                    key={updateData.title}
                     onChange={ e => eHandler(e) }
+                    onBlur={e => eHandler(e) }
                     type="text" 
-                    name="tittle" 
-                    id="title"/></div>
+                    name="title" 
+                    id="title"
+                    required
+                    /></div>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
                     value={updateData.author}
                     onChange={ e => eHandler(e) }
+                    onBlur={e => eHandler(e) }
                     type="text" 
                     name="author" 
-                    id="author"/></div>
+                    id="author"
+                    required
+                    /></div>
                     <label htmlFor="book">Book Url</label>
-                    <div><input type="text" name="book" id="book"/></div>
+                    <div><input 
+                    type="text" 
+                    name="bookUrl" 
+                    id="bookUrl"
+                    value={updateData.bookUrl}
+                    onChange={e => eHandler(e)}
+                    onBlur={e => eHandler(e) }
+                    required
+                    /></div>
                     <label htmlFor="published">Published</label>
-                    <div><input type="text" name="published" id="published"/></div>
-                    <label htmlFor="tittle">ISNB</label>
-                    <div><input type="text" name="isnb" id="isnb"/></div>
+                    <div><input 
+                    type="text" 
+                    name="isPublished" 
+                    id="isPublished"
+                    value={updateData.isPublished}
+                    onChange={e => eHandler(e)}
+                    onBlur={e => eHandler(e) }
+                    required
+                    /></div>
+                    <label htmlFor="tittle">ISBN</label>
+                    <div><input 
+                    type="text" 
+                    name="ISBN" 
+                    id="ISBN"
+                    value={updateData.ISBN}
+                    onChange={e => eHandler(e)}
+                    onBlur={e => eHandler(e) }
+                    /></div>
                     <label htmlFor="tittle">Description</label>
                     <div><input 
                     type="text" 
-                    name="desc" 
-                    id="desc"
+                    name="description" 
+                    id="description"
                     value={updateData.description}
                     onChange={e => eHandler(e)}
+                    onBlur={e => eHandler(e) }
+                    required
                     /></div>
                     <button type="submit">Add</button>
                 </form>

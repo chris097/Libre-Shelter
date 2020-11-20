@@ -10,7 +10,8 @@
       "description": "Daniel Goleman transcends the role of reporter to make an original contribution to the question that has fascinate thinkers for millennia",
       "image": "",
       "likes": 30,
-      "comments": 30
+      "comments": 30,
+      "photo": ""
     },
     {
       "id": 2,
@@ -37,15 +38,22 @@
       "comments": 30
     },
     {
-      "title": "Am chris",
-      "author": "",
+      "title": "",
+      "author": "kdkd",
+      "bookUrl": "",
+      "isPublished": "",
+      "ISBN": "",
       "description": "",
       "id": 4
     },
     {
       "title": "Am chris",
-      "author": "kdkd",
-      "description": "",
+      "author": "book master",
+      "bookUrl": "https://github.com/new",
+      "isPublished": "1900",
+      "ISBN": "",
+      "description": "A nice book not to comprehend.",
+      "desc": "",
       "id": 5
     }
   ],
