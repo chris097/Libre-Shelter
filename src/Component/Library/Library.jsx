@@ -41,7 +41,7 @@ const Lib = () => {
                         >
                             <img src={loveIcon} alt=""/>
                             <div className="like-num"
-                            >{book.likes}</div>
+                            >24</div>
                         </div>
                         <div className="msg">
                             <img src={msgIcon} alt=""/>
