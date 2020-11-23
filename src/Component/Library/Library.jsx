@@ -10,7 +10,7 @@ import msgIcon from "./Icons/msg-icon.svg";
 import axios from "axios";
 import Books from "../Modal/Books/Books";
 
-export let url = "http://localhost:3004/books";
+export let url = "https://lib-shelter.herokuapp.com/api/items";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
@@ -20,10 +20,7 @@ const Lib = () => {
     axios.get(`${url}`)
     .then(res => setBooks(res.data))
     .catch(err => console.log('Something went wrong...', err.message))
-    }, []);
-
-    
-        
+    }, []);   
     return(
         <>
         <div className="lib">
@@ -31,7 +28,7 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    key={book.id}
+                    key={book}
                     onClick={e => setModalIsOpen(true)}
                     >
                     <img src={card1} alt="card1"/>
@@ -63,93 +60,8 @@ const Lib = () => {
                     author={book.author}
                 />
                 </>
-                ))}
-
-                <div className="card">
-                    <img src={card1} alt="card1"/>
-                    <div className="book-name">
-                        <div className="fsw-600">The Purple Maze</div>
-                        <div className="secondary-color fsz-13">Stuart Matt</div>
-                    </div>
-                    <div className="tweet">
-                        <div className="like-comment">
-                            <img src={loveIcon} alt=""/>
-                            <div className="like-num">23</div>
-                        </div>
-                        <div className="msg">
-                            <img src={msgIcon} alt=""/>
-                            <div className="msg-num">23</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={card2} alt="card1"/>
-                    <div className="book-name">
-                        <div className="fsw-600">The Purple Maze</div>
-                        <div className="secondary-color fsz-13">Stuart Matt</div>
-                    </div>
-                    <div className="tweet">
-                        <div className="like-comment">
-                            <img src={loveIcon} alt=""/>
-                            <div className="like-num">23</div>
-                        </div>
-                        <div className="msg">
-                            <img src={msgIcon} alt=""/>
-                            <div className="msg-num">23</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={card3} alt="card1"/>
-                    <div className="book-name">
-                        <div className="fsw-600">The Purple Maze</div>
-                        <div className="secondary-color fsz-13">Stuart Matt</div>
-                    </div>
-                    <div className="tweet">
-                        <div className="like-comment">
-                            <img src={loveIcon} alt=""/>
-                            <div className="like-num">23</div>
-                        </div>
-                        <div className="msg">
-                            <img src={msgIcon} alt=""/>
-                            <div className="msg-num">23</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={card4} alt="card1"/>
-                    <div className="book-name">
-                        <div className="fsw-600">The Purple Maze</div>
-                        <div className="secondary-color fsz-13">Stuart Matt</div>
-                    </div>
-                    <div className="tweet">
-                        <div className="like-comment">
-                            <img src={loveIcon} alt=""/>
-                            <div className="like-num">23</div>
-                        </div>
-                        <div className="msg">
-                            <img src={msgIcon} alt=""/>
-                            <div className="msg-num">23</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={card4} alt="card1"/>
-                    <div className="book-name">
-                        <div className="fsw-600">The Purple Maze</div>
-                        <div className="secondary-color fsz-13">Stuart Matt</div>
-                    </div>
-                    <div className="tweet">
-                        <div className="like-comment">
-                            <img src={loveIcon} alt=""/>
-                            <div className="like-num">23</div>
-                        </div>
-                        <div className="msg">
-                            <img src={msgIcon} alt=""/>
-                            <div className="msg-num">23</div>
-                        </div>
-                    </div>
-                </div>
+                ))} 
+               
             </div>
         </div>
         </>
