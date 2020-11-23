@@ -28,8 +28,8 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    key={book}
                     onClick={e => setModalIsOpen(true)}
+                    key={setBooks}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
