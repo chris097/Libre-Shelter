@@ -8,6 +8,8 @@ import axios from "axios";
 import Books from "../Modal/Books/Books";
 
 export let url = "https://lib-shelter.herokuapp.com/api/items";
+// export let url = "http://localhost:3004";
+
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
@@ -26,7 +28,7 @@ const Lib = () => {
                     <>
                     <div className="card"
                     onClick={e => setModalIsOpen(true)}
-                    key={setBooks}
+                    key={books}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
