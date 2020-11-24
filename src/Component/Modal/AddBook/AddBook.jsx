@@ -8,12 +8,7 @@ Modal.setAppElement('body')
 
 const BookModal = ({
     modalIsOpen, 
-    setModalIsOpen, 
-    // mySubmitHandler, 
-    // author, 
-    // setAuthor, 
-    // tittle, 
-    // setTittle
+    setModalIsOpen
 }) =>{
     const [updateData, setUpdateData] = useState({
         title: "",
@@ -35,7 +30,6 @@ const BookModal = ({
 
         const eHandler = (e) => {
             e.preventDefault()
-            e.stopPropagation()
             const newData = {...updateData}
             newData[e.target.id] = e.target.value
             setUpdateData(newData)
@@ -52,8 +46,8 @@ const BookModal = ({
             content: {
              backgroundColor: ' ',
              border: ' ',
-            overflow: 'auto',
-            WebkitOverflowScrolling: 'touch'
+             overflow: 'auto',
+             WebkitOverflowScrolling: 'touch'
             }
           }}
         >
@@ -70,7 +64,7 @@ const BookModal = ({
                 <form action="" onSubmit={mySubmitHandler}>
                     <label htmlFor="tittle">Tittle</label>
                     <div><input 
-                    value={updateData.title}
+                    // value={updateData.title}
                     onChange={ e => eHandler(e) }
                     onBlur={e => eHandler(e) }
                     type="text" 
@@ -80,7 +74,7 @@ const BookModal = ({
                     /></div>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
-                    value={updateData.author}
+                    // value={updateData.author}
                     onChange={ e => eHandler(e) }
                     onBlur={e => eHandler(e) }
                     type="text" 
@@ -93,7 +87,7 @@ const BookModal = ({
                     type="text" 
                     name="bookUrl" 
                     id="bookUrl"
-                    value={updateData.bookUrl}
+                    // value={updateData.bookUrl}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     required
@@ -103,7 +97,7 @@ const BookModal = ({
                     type="text" 
                     name="isPublished" 
                     id="isPublished"
-                    value={updateData.isPublished}
+                    // value={updateData.isPublished}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     required
@@ -113,7 +107,7 @@ const BookModal = ({
                     type="text" 
                     name="ISBN" 
                     id="ISBN"
-                    value={updateData.ISBN}
+                    // value={updateData.ISBN}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     /></div>
@@ -122,7 +116,7 @@ const BookModal = ({
                     type="text" 
                     name="description" 
                     id="description"
-                    value={updateData.description}
+                    // value={updateData.description}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     required

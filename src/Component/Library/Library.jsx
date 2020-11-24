@@ -6,6 +6,7 @@ import loveIcon from "./Icons/Vector.svg";
 import msgIcon from "./Icons/msg-icon.svg";
 import axios from "axios";
 import Books from "../Modal/Books/Books";
+// import AddBook from "../Modal/AddBook/AddBook"
 
 export let url = "https://lib-shelter.herokuapp.com/api/items";
 // export let url = "http://localhost:3004";
@@ -19,7 +20,8 @@ const Lib = () => {
     axios.get(`${url}`)
     .then(res => setBooks(res.data))
     .catch(err => console.log('Something went wrong...', err.message))
-    }, []);   
+    }, []);
+
     return(
         <>
         <div className="lib">
