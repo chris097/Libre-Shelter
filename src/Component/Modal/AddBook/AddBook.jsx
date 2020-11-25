@@ -12,28 +12,32 @@ const BookModal = ({
     setModalIsOpen
 }) =>{
     const [updateData, setUpdateData] = useState({
-        title: "",
-        author: "",
-        bookUrl: "",
-        isPublished: "",
-        ISBN: "",
-        description: ""
+        title: [],
+        author: [],
+        bookUrl: [],
+        isPublished: [],
+        ISBN: [],
+        description: []
     })
+
 
     // const [reminder, setReminder] = useState([])
 
         const mySubmitHandler = (e) =>{
             e.preventDefault()
-            if(updateData.author.length < 5 & updateData.author.length > 50 || updateData.title.length < 5 || updateData.description.length < 50 ){
-                console.log('Required character 5 min and 50 characher max...')
+            if(updateData.title.length < 5 || updateData.title.length > 50){
+                console.log('Something went wrong... complete character')
             }else{
+               console.log('Loading....')
+               setTimeout(() => {
                 axios.post(url, updateData)
                 .then(res => {
                 let result = res.data({content: updateData})
                 setUpdateData(result)
             })
-            .catch(err => console.error(`Not updating..., ${err.message}!`))
-            setModalIsOpen(false)
+                .catch(err => console.error(`Not updating..., ${err.message}!`))
+                setModalIsOpen(false)
+               }, 2000);
             }
             setUpdateData('')
         }
