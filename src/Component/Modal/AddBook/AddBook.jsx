@@ -6,6 +6,7 @@ import {url} from "../../Library/Library";
 import axios from 'axios';
 Modal.setAppElement('body')
 
+
 const BookModal = ({
     modalIsOpen, 
     setModalIsOpen
@@ -19,13 +20,22 @@ const BookModal = ({
         description: ""
     })
 
+    // const [reminder, setReminder] = useState([])
+
         const mySubmitHandler = (e) =>{
-            e.preventDefault();
-            axios.post(url, updateData)
-            .then(res => {
-                console.log(res.data)
+            e.preventDefault()
+            if(updateData.author.length < 5 & updateData.author.length > 50 || updateData.title.length < 5 || updateData.description.length < 50 ){
+                console.log('Required character 5 min and 50 characher max...')
+            }else{
+                axios.post(url, updateData)
+                .then(res => {
+                let result = res.data({content: updateData})
+                setUpdateData(result)
             })
             .catch(err => console.error(`Not updating..., ${err.message}!`))
+            setModalIsOpen(false)
+            }
+            setUpdateData('')
         }
 
         const eHandler = (e) => {
@@ -61,10 +71,10 @@ const BookModal = ({
                     <img src={closeIcon} alt=""/>
                 </div>
                 </div>
-                <form action="" onSubmit={mySubmitHandler}>
+                <form action="" onSubmit={mySubmitHandler ? mySubmitHandler : ''}>
                     <label htmlFor="tittle">Tittle</label>
                     <div><input 
-                    // value={updateData.title}
+                    value={updateData.title}
                     onChange={ e => eHandler(e) }
                     onBlur={e => eHandler(e) }
                     type="text" 
@@ -74,7 +84,7 @@ const BookModal = ({
                     /></div>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
-                    // value={updateData.author}
+                    value={updateData.author}
                     onChange={ e => eHandler(e) }
                     onBlur={e => eHandler(e) }
                     type="text" 
@@ -87,7 +97,7 @@ const BookModal = ({
                     type="text" 
                     name="bookUrl" 
                     id="bookUrl"
-                    // value={updateData.bookUrl}
+                    value={updateData.bookUrl}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     required
@@ -97,7 +107,7 @@ const BookModal = ({
                     type="text" 
                     name="isPublished" 
                     id="isPublished"
-                    // value={updateData.isPublished}
+                    value={updateData.isPublished}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     required
@@ -107,7 +117,7 @@ const BookModal = ({
                     type="text" 
                     name="ISBN" 
                     id="ISBN"
-                    // value={updateData.ISBN}
+                    value={updateData.ISBN}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     /></div>
@@ -116,7 +126,7 @@ const BookModal = ({
                     type="text" 
                     name="description" 
                     id="description"
-                    // value={updateData.description}
+                    value={updateData.description}
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     required
