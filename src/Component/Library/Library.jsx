@@ -72,7 +72,7 @@ const Lib = () => {
                     modalIsOpen={modalIsOpen}
                     id={data.id}
                     setModalIsOpen={setModalIsOpen}
-                    book={data.description} 
+                    description={data.description} 
                     author={data.author}
                     isPublished={data.isPublished}
                     ISBN={data.ISBN}

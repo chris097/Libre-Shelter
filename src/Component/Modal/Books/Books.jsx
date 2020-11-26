@@ -14,7 +14,7 @@ import axios from "axios";
 const Books = ({
     modalIsOpen,
     setModalIsOpen,
-    book,
+    description,
     author,
     id,
     isPublished,
@@ -69,9 +69,7 @@ const Books = ({
                     </div>
                 </div>
                 <div className="book-col-2">
-                    <p>
-                        {book}
-                    </p>
+                    <p>{description}</p>
                     <div className="column">
                         <div className="love-icon">
                             <img src={loveIcon} alt=""/><span>30</span>
