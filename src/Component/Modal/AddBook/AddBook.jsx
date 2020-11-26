@@ -25,10 +25,14 @@ const BookModal = ({
 
         const mySubmitHandler = (e) =>{
             e.preventDefault()
-            if(updateData.title.length < 5 || updateData.title.length > 50){
+    if(
+        updateData.title.length < 5 || updateData.title.length > 50 || updateData.author.length < 5 || 
+        updateData.author.length > 50 || updateData.description.length < 50 ||updateData.description.length > 500
+    ){
                 console.log('Something went wrong... complete character')
             }else{
                console.log('Loading....')
+               setModalIsOpen(false)
                setTimeout(() => {
                 axios.post(url, updateData)
                 .then(res => {
@@ -36,7 +40,7 @@ const BookModal = ({
                 setUpdateData(result)
             })
                 .catch(err => console.error(`Not updating..., ${err.message}!`))
-                setModalIsOpen(false)
+                // setModalIsOpen(false)
                }, 2000);
             }
             setUpdateData('')

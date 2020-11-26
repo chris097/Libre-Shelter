@@ -8,19 +8,34 @@ import axios from "axios";
 import Books from "../Modal/Books/Books";
 // import AddBook from "../Modal/AddBook/AddBook"
 
-export let url = "https://lib-shelter.herokuapp.com/api/items";
-// export let url = "http://localhost:3004";
-
+// export let url = "https://lib-shelter.herokuapp.com/api/items";
+export let url = "http://localhost:3004/books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
      const [ modalIsOpen, setModalIsOpen] = useState(false)
+     const [data, setData] = useState('')
+
 
     useEffect(() => {
     axios.get(`${url}`)
-    .then(res => setBooks(res.data))
+    .then(res => {
+        const test = res.data;
+        setBooks(test)
+        console.log(test)
+    })
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
+
+    const openModal = (id) => {
+        setModalIsOpen(true)
+        axios.get(`http://localhost:3004/books/${id}`)
+        .then(res => {
+        const result = res.data
+        setData(result)
+        // console.log(result)
+    })
+    }
 
     return(
         <>
@@ -29,8 +44,8 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    onClick={e => setModalIsOpen(true)}
-                    key={books}
+                    onClick={() => openModal(`${book.id}`)}
+                    key={book}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
@@ -55,10 +70,12 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
-                    id={book.id}
+                    id={data.id}
                     setModalIsOpen={setModalIsOpen}
-                    book={book.description} 
-                    author={book.author}
+                    book={data.description} 
+                    author={data.author}
+                    isPublished={data.isPublished}
+                    ISBN={data.ISBN}
                 />
                 </>
                 ))} 

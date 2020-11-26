@@ -8,14 +8,25 @@ import editIcon from "./Icons/edit-icon.svg";
 import deleteIcon from "./Icons/delete-icon.svg";
 import commentImg from "./Images/comment-img.svg";
 import Modal from "react-modal";
+import axios from "axios";
 
 
 const Books = ({
     modalIsOpen,
     setModalIsOpen,
     book,
-    author
+    author,
+    id,
+    isPublished,
+    ISBN
 }) => {
+
+    const deleteModal = () => {
+        axios.delete(`http://localhost:3004/books/${id}`)
+        .then(res => console.log(res))
+        setModalIsOpen(false)
+    }
+
     return(
         <>
         <Modal isOpen={modalIsOpen}
@@ -38,6 +49,7 @@ const Books = ({
                 <div className="fsw-600 fsz-14">The purse mase</div>
                 <div className="close-modal"
                 onClick={() => setModalIsOpen(false)}
+                value={id}
                 ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
@@ -47,13 +59,13 @@ const Books = ({
                         <p>Author : <span>{author}</span></p>
                     </div>
                     <div className="pubished">
-                        <p>Pubished : <span>1996</span></p>
+                        <p>Pubished : <span>{isPublished}</span></p>
                     </div>
                     <div className="pubisher">
-                        <p>Pubisher : <span>Hollman</span></p>
+                        <p>Pubisher : <span>{author}</span></p>
                     </div>
                     <div className="isbn">
-                        <p>ISBN : <span>1091817</span></p>
+                        <p>ISBN : <span>{ISBN}</span></p>
                     </div>
                 </div>
                 <div className="book-col-2">
@@ -68,7 +80,7 @@ const Books = ({
                             <div className="edit-icon">
                                 <img src={editIcon} alt="edit-icon"/> 
                             </div>
-                            <div className="delete-icon">
+                            <div className="delete-icon" onClick={deleteModal}>
                                 <img src={deleteIcon} alt="delte-icon"/>
                             </div>
                         </div>

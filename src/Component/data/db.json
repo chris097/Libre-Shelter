@@ -1,60 +1,13 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "Emotional Intelligence",
-      "author": "Daniel Goleman",
-      "isPublished": 1995,
-      "ISBN": "",
-      "bookUrl": "https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X",
-      "description": "Daniel Goleman transcends the role of reporter to make an original contribution to the question that has fascinate thinkers for millennia",
-      "image": "",
-      "likes": 30,
-      "comments": 30,
-      "photo": ""
-    },
-    {
-      "id": 2,
-      "title": "Emotional",
-      "author": "Daniel Goleman",
-      "isPublished": 1995,
-      "ISBN": "",
-      "bookUrl": "https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X",
-      "description": "Why it can matter more than IQ",
-      "image": "",
-      "likes": 30,
-      "comments": 30
-    },
-    {
-      "id": 3,
-      "title": "Emotional",
-      "author": "Daniel Goleman",
-      "isPublished": 1995,
-      "ISBN": "",
-      "bookUrl": "https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X",
-      "description": "Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip ut sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod sit consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur esse proident duis Lorem.",
-      "image": "",
-      "likes": 30,
-      "comments": 30
-    },
-    {
-      "title": "",
-      "author": "kdkd",
-      "bookUrl": "",
-      "isPublished": "",
-      "ISBN": "",
-      "description": "",
-      "id": 4
-    },
-    {
-      "title": "Am chris",
-      "author": "book master",
-      "bookUrl": "https://github.com/new",
-      "isPublished": "1900",
-      "ISBN": "",
-      "description": "A nice book not to comprehend.",
-      "desc": "",
-      "id": 5
+      "title": "Frontend developer",
+      "author": "Chibuzo",
+      "bookUrl": "https://chris097.github.io/christian-chiemela/#projects",
+      "isPublished": "2020",
+      "ISBN": "09827h72",
+      "description": "A nice book not to comprehend.llllllllllllllllllllllllllllllllllllllll",
+      "id": 3
     }
   ],
   "comments": [
