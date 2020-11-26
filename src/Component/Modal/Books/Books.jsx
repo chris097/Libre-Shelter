@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Book.css";
 import "../../Utils/index.css";
 import closeIcon from "../AddBook/Icons/close.svg";
@@ -9,7 +9,7 @@ import deleteIcon from "./Icons/delete-icon.svg";
 import commentImg from "./Images/comment-img.svg";
 import Modal from "react-modal";
 import axios from "axios";
-import url from "../../Library/Library"
+import {url} from "../../Library/Library";
 
 
 const Books = ({
@@ -22,9 +22,11 @@ const Books = ({
     ISBN
 }) => {
 
-    const deleteModal = () => {
+    const [likes, setLikes] = useState('')
+
+    const deleteBook = () => {
         axios.delete(`${url}/${id}`)
-        .then(res => console.log(res))
+        .then(res => console.log(res.data))
         setModalIsOpen(false)
     }
 
@@ -72,14 +74,14 @@ const Books = ({
                 <div className="book-col-2">
                     <p>{description}</p>
                     <div className="column">
-                        <div className="love-icon">
-                            <img src={loveIcon} alt=""/><span>30</span>
+                        <div className="love-icon" onClick={() => setLikes(!likes ? likes +1 : '')}>
+                            <img src={loveIcon} alt=""/><span>{likes}</span>
                         </div>
                         <div className="col">
                             <div className="edit-icon">
                                 <img src={editIcon} alt="edit-icon"/> 
                             </div>
-                            <div className="delete-icon" onClick={deleteModal}>
+                            <div className="delete-icon" onClick={deleteBook}>
                                 <img src={deleteIcon} alt="delte-icon"/>
                             </div>
                         </div>
