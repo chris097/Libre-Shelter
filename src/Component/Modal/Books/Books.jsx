@@ -9,6 +9,7 @@ import deleteIcon from "./Icons/delete-icon.svg";
 import commentImg from "./Images/comment-img.svg";
 import Modal from "react-modal";
 import axios from "axios";
+import url from "../../Library/Library"
 
 
 const Books = ({
@@ -22,7 +23,7 @@ const Books = ({
 }) => {
 
     const deleteModal = () => {
-        axios.delete(`http://localhost:3004/books/${id}`)
+        axios.delete(`${url}/${id}`)
         .then(res => console.log(res))
         setModalIsOpen(false)
     }

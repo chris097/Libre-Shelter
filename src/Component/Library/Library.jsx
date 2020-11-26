@@ -8,8 +8,8 @@ import axios from "axios";
 import Books from "../Modal/Books/Books";
 // import AddBook from "../Modal/AddBook/AddBook"
 
-// export let url = "https://lib-shelter.herokuapp.com/api/items";
-export let url = "http://localhost:3004/books";
+export let url = "https://lib-shelter.herokuapp.com/api/items";
+// export let url = "http://localhost:3004/books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
@@ -27,9 +27,9 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
 
-    const openModal = (id) => {
+    const openModal = (_id) => {
         setModalIsOpen(true)
-        axios.get(`http://localhost:3004/books/${id}`)
+        axios.get(`${url}/${_id}`)
         .then(res => {
         const result = res.data
         setData(result)
@@ -44,7 +44,7 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    onClick={() => openModal(`${book.id}`)}
+                    onClick={() => openModal(`${book._id}`)}
                     key={book}
                     >
                     <img src={card1} alt="card1"/>
