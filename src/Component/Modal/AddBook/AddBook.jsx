@@ -20,30 +20,31 @@ const BookModal = ({
         description: []
     })
 
-
     // const [reminder, setReminder] = useState([])
 
         const mySubmitHandler = (e) =>{
             e.preventDefault()
-    if(
-        updateData.title.length < 5 || updateData.title.length > 50 || updateData.author.length < 5 || 
-        updateData.author.length > 50 || updateData.description.length < 50 ||updateData.description.length > 500
-    ){
+            if(
+                updateData.title.length < 5 || updateData.title.length > 50 || updateData.author.length < 5 || 
+                updateData.author.length > 50 || updateData.description.length < 50 ||updateData.description.length > 500
+                // updateData.isPublished !== Number || updateData.isPublished < 4 || updateData.isPublished > 4
+            ){
                 console.log('Something went wrong... complete character')
             }else{
-               console.log('Loading....')
+               console.log('loading...')
                setModalIsOpen(false)
                setTimeout(() => {
                 axios.post(url, updateData)
                 .then(res => {
-                let result = res.data({content: updateData})
+                let result = res.data
                 setUpdateData(result)
             })
                 .catch(err => console.error(`Not updating..., ${err.message}!`))
                 // setModalIsOpen(false)
                }, 2000);
             }
-            setUpdateData('')
+            // setUpdateData('')
+            console.log(updateData);
         }
 
         const eHandler = (e) => {

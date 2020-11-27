@@ -74,7 +74,6 @@
 }
 
 .books-container .book-col-2 span{
-   
     position: absolute;
     font-size: 10px;
     margin-left: -2px;
@@ -134,10 +133,14 @@
 @media screen and (max-width: 400px){
     .books-container{
         width: 95%;
+        padding: 10px;
     }
     .books-container .book-col-2 p{
-        width: 100%;
-        height: 70%;
+        width: 200px;
+        height: 250px;
+        overflow-wrap: break-word;
+        overflow-y: scroll;
+        padding: 0 10px;
     }
     .books-container .book-col-1 img{
         width: 130px;
@@ -145,5 +148,10 @@
         padding: 0;
         margin: 0;
     }
+    /* .books-container .book-col-2 .love-icon img, */
+    .books-container .book-col-2 .edit-icon img,
+    .books-container .book-col-2 .delete-icon img{
+    margin: 0 10px;
+}
 }
 

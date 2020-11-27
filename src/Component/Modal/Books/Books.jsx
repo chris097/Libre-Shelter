@@ -26,7 +26,9 @@ const Books = ({
 
     const deleteBook = () => {
         axios.delete(`${url}/${id}`)
-        .then(res => console.log(res.data))
+        .then(res => {
+            console.log(res.data)
+        })
         setModalIsOpen(false)
     }
 
