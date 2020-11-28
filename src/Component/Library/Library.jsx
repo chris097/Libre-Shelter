@@ -8,6 +8,7 @@ import axios from "axios";
 import Books from "../Modal/Books/Books";
 // import AddBook from "../Modal/AddBook/AddBook"
 
+
 // export let url = "https://lib-shelter.herokuapp.com/api/items";
 export let url = "http://localhost:3004/books";
 
@@ -37,6 +38,13 @@ const Lib = () => {
     })
     }
 
+    const search = [
+        {name: "christian chiemela", age: 40}
+    ]
+    search.filter(name => (
+        console.log(name.name)
+    ))
+
     return(
         <>
         <div className="lib">
@@ -48,7 +56,7 @@ const Lib = () => {
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
-                        <div className="fsw-600">{book.title} <keygen/></div>
+                        <div className="fsw-600">{book.title}</div>
                         <div className="secondary-color fsz-13">{book.author}</div>
                     </div>
                     <div className="tweet">

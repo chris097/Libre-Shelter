@@ -29,6 +29,7 @@ const Books = ({
         .then(res => {
             console.log(res.data)
         })
+        .catch(err => console.log('Access denied...', err.message))
         setModalIsOpen(false)
     }
 
