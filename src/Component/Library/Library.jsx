@@ -39,10 +39,10 @@ const Lib = () => {
     }
 
     const search = [
-        {name: "christian chiemela", age: 40}
+        {name: "christian chiemela", age: 40},
     ]
     search.filter(name => (
-        console.log(name.name)
+        console.log(name)
     ))
 
     return(
