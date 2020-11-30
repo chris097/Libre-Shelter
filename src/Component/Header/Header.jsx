@@ -28,12 +28,17 @@ const SearchForm = ({ search }) => {
     )
 }
 
-const Header = () =>{
+const Header = ({eSearch}) =>{
     const [modalIsOpen, setModalIsOpen] = useState(false);
     // const [tittle, setTittle] = useState('');
     const [book, setBook] = useState('')
     const [search, setSearch] = useState([])
     const [searchBox, setSearchBox] = useState([])
+
+    const eBooks = e => {
+        console.log(eSearch)
+        setSearch(e.target.value)
+    }
 
     return (
         <>
@@ -44,8 +49,8 @@ const Header = () =>{
                     <div 
                     className="searchForm"
                     value={search}
-                    onChange={e => setSearch(e.target.value)}
-                    onBlur={e => setSearch(e.target.value)}
+                    onChange={e => eBooks(e)}
+                    onBlur={e => eBooks(e)}
                     >
                         <img src={searchFormIcon} alt="search-icon"/>
                         <input 

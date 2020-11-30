@@ -8,6 +8,11 @@ import axios from "axios";
 import Books from "../Modal/Books/Books";
 // import AddBook from "../Modal/AddBook/AddBook"
 
+const Loading = () => {
+    return(
+        <h3 className="loading">Fetching data <i class="fa fa-refresh fa-spin"></i></h3>
+    )
+}
 
 // export let url = "https://lib-shelter.herokuapp.com/api/items";
 export let url = "http://localhost:3004/books";
@@ -16,14 +21,22 @@ const Lib = () => {
     const [ books, setBooks] = useState([])
      const [ modalIsOpen, setModalIsOpen] = useState(false)
      const [data, setData] = useState('')
+     const [ search, setSearch] = useState([])
+     const [loading, setLoading] = useState(<Loading />)
 
 
     useEffect(() => {
     axios.get(`${url}`)
     .then(res => {
         const test = res.data;
-        setBooks(test)
-        console.log(test)
+        if(test){
+            setTimeout(() => {
+                setBooks(test)
+                console.log(test)
+                setLoading('')
+            }, 3000);
+        }
+        return test;
     })
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
@@ -38,18 +51,12 @@ const Lib = () => {
     })
     }
 
-    const search = [
-        {name: "christian chiemela", age: 40},
-    ]
-    search.filter(name => (
-        console.log(name)
-    ))
-
     return(
         <>
         <div className="lib">
             <div className="cards-container">
-                {books.map(book => (
+                {loading}
+                {books ? books.map(book => (
                     <>
                     <div className="card"
                     onClick={() => openModal(`${book.id}`)}
@@ -85,7 +92,7 @@ const Lib = () => {
                     ISBN={data.ISBN}
                 />
                 </>
-                ))} 
+                )): {loading}} 
                
             </div>
         </div>

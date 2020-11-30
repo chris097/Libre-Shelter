@@ -83,3 +83,9 @@
         grid-row-gap: 20px;
     }
 } */
+
+.loading{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+}

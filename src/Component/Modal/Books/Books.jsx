@@ -23,6 +23,9 @@ const Books = ({
 }) => {
 
     const [likes, setLikes] = useState('')
+    const [update, setUpdate] = useState({
+        description: []
+    })
 
     const deleteBook = () => {
         axios.delete(`${url}/${id}`)
@@ -31,6 +34,11 @@ const Books = ({
         })
         .catch(err => console.log('Access denied...', err.message))
         setModalIsOpen(false)
+    }
+    
+    const editBook = () => {
+        axios.put(`${url}/${id}`)
+        .then(res => console.log(res.data, update))
     }
 
     return(
@@ -82,7 +90,7 @@ const Books = ({
                         </div>
                         <div className="col">
                             <div className="edit-icon">
-                                <img src={editIcon} alt="edit-icon"/> 
+                                <img src={editIcon} alt="edit-icon" onChange={() => setUpdate(editBook)}/> 
                             </div>
                             <div className="delete-icon" onClick={deleteBook}>
                                 <img src={deleteIcon} alt="delte-icon"/>

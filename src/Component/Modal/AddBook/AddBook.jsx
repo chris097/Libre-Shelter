@@ -31,7 +31,6 @@ const BookModal = ({
             ){
                 console.log('Something went wrong... complete character')
             }else{
-               console.log('loading...')
                setModalIsOpen(false)
                setTimeout(() => {
                 axios.post(url, updateData)
@@ -39,9 +38,9 @@ const BookModal = ({
                 let result = res.data
                 setUpdateData(result)
             })
-                .catch(err => console.error(`Not updating..., ${err.message}!`))
+            .catch(err => console.error(`Not updating..., ${err.message}!`))
                 // setModalIsOpen(false)
-               }, 2000);
+            }, 2000);
             }
             // setUpdateData('')
             console.log(updateData);

@@ -76,10 +76,3 @@
     }
 }
 
-.loading{
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    margin: auto;
-    text-align: center;
-}
