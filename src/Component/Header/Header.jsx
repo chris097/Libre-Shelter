@@ -5,8 +5,6 @@ import "../Modal/AddBook/AddBook.css";
 import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import BookModal from "../Modal/AddBook/AddBook";
-import axios from "axios";
-import { url } from "../Library/Library";
 
 const SearchForm = ({ search }) => {
     return(
