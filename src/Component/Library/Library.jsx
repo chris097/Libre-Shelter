@@ -14,14 +14,13 @@ const Loading = () => {
     )
 }
 
-// export let url = "https://lib-shelter.herokuapp.com/api/items";
-export let url = "http://localhost:3004/books";
+export let url = "https://lib-shelter.herokuapp.com/api/items";
+// export let url = "http://localhost:3004/books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
      const [ modalIsOpen, setModalIsOpen] = useState(false)
      const [data, setData] = useState('')
-     const [ search, setSearch] = useState([])
      const [loading, setLoading] = useState(<Loading />)
 
 
@@ -41,9 +40,9 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
 
-    const openModal = (id) => {
+    const openModal = (_id) => {
         setModalIsOpen(true)
-        axios.get(`${url}/${id}`)
+        axios.get(`${url}/${_id}`)
         .then(res => {
         const result = res.data
         setData(result)
@@ -56,10 +55,10 @@ const Lib = () => {
         <div className="lib">
             <div className="cards-container">
                 {loading}
-                {books ? books.map(book => (
+                {books.map(book => (
                     <>
                     <div className="card"
-                    onClick={() => openModal(`${book.id}`)}
+                    onClick={() => openModal(`${book._id}`)}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
@@ -84,7 +83,7 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
-                    id={data.id}
+                    id={data._id}
                     setModalIsOpen={setModalIsOpen}
                     description={data.description} 
                     author={data.author}
@@ -92,7 +91,7 @@ const Lib = () => {
                     ISBN={data.ISBN}
                 />
                 </>
-                )): {loading}} 
+                ))} 
                
             </div>
         </div>

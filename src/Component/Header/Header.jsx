@@ -5,6 +5,8 @@ import "../Modal/AddBook/AddBook.css";
 import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import BookModal from "../Modal/AddBook/AddBook";
+import axios from "axios";
+import { url } from "../Library/Library";
 
 const SearchForm = ({ search }) => {
     return(
@@ -35,8 +37,10 @@ const Header = ({eSearch}) =>{
     const [search, setSearch] = useState([])
     const [searchBox, setSearchBox] = useState([])
 
+    // axios.get(url)
+    // .then(res => console.log(res.data))
+
     const eBooks = e => {
-        console.log(eSearch)
         setSearch(e.target.value)
     }
 
