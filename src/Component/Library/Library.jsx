@@ -52,9 +52,9 @@ const Lib = () => {
 
     return(
         <>
+        {loading}
         <div className="lib">
             <div className="cards-container">
-                {loading}
                 {books.map(book => (
                     <>
                     <div className="card"

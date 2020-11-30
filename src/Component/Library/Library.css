@@ -74,6 +74,10 @@
 @media screen and (max-width: 664px){
     .lib .cards-container{
         grid-template-columns: repeat(2, 1fr);
+    }    
+    .loading{
+        left: 20%;
+        right: 15%;
     }
 }
 /* 
@@ -86,6 +90,7 @@
 
 .loading{
     position: fixed;
-    left: 50%;
+    transform: translate(-50%, -50%);
     top: 50%;
+    left: 50%;
 }
