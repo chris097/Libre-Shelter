@@ -83,7 +83,7 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
-                    id={data._id}
+                    _id={data._id}
                     setModalIsOpen={setModalIsOpen}
                     description={data.description} 
                     author={data.author}
