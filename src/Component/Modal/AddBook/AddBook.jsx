@@ -24,13 +24,13 @@ const BookModal = ({
 
         const mySubmitHandler = (e) =>{
             e.preventDefault()
-            if(
-                updateData.title.length < 5 || updateData.title.length > 50 || updateData.author.length < 5 || 
-                updateData.author.length > 50 || updateData.description.length < 50 ||updateData.description.length > 500 ||
-                updateData.isPublished !== Number || updateData.isPublished < 4 
-            ){
-                console.log('Something went wrong... complete character')
-            }else{
+            // if(
+            //     updateData.title.length < 5 || updateData.title.length > 50 || updateData.author.length < 5 || 
+            //     updateData.author.length > 50 || updateData.description.length < 50 ||updateData.description.length > 500 ||
+            //     updateData.isPublished !== Number || updateData.isPublished < 4 
+            // ){
+            //     console.log('Something went wrong... complete character')
+            // }else{
                setModalIsOpen(false)
                setTimeout(() => {
                 axios.post(url, updateData)
@@ -41,7 +41,6 @@ const BookModal = ({
             .catch(err => console.error(`Not updating..., ${err.message}!`))
                 // setModalIsOpen(false)
             }, 2000);
-            }
             // setUpdateData('')
             console.log(updateData);
         }
