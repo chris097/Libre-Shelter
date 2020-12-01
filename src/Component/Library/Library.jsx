@@ -14,15 +14,21 @@ const Loading = () => {
     )
 }
 
-export let url = "https://lib-shelter.herokuapp.com/api/items";
-// export let url = "http://localhost:3004/books";
+const NoData = () => {
+    return(
+        <h4 className="loading">No Data Found...</h4>
+    )
+}
+
+// export let url = "https://lib-shelter.herokuapp.com/api/items";
+export let url = "http://localhost:3004/books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
      const [ modalIsOpen, setModalIsOpen] = useState(false)
      const [data, setData] = useState('')
      const [loading, setLoading] = useState(<Loading />)
-
+     const [noData, setNoData] = useState(false)
 
     useEffect(() => {
     axios.get(`${url}`)
@@ -30,19 +36,27 @@ const Lib = () => {
         const test = res.data;
         if(test){
             setTimeout(() => {
-                setBooks(test)
                 console.log(test)
+                setBooks(test)
                 setLoading('')
             }, 3000);
         }
+        if(test.length === 0){
+            console.log('no-data...')
+            setTimeout(() => {
+                setNoData(<NoData />)
+            }, 3100);
+        }
+        console.log(test.length === 0)
+
         return test;
     })
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
 
-    const openModal = (_id) => {
+    const openModal = (id) => {
         setModalIsOpen(true)
-        axios.get(`${url}/${_id}`)
+        axios.get(`${url}/${id}`)
         .then(res => {
         const result = res.data
         setData(result)
@@ -54,11 +68,12 @@ const Lib = () => {
         <>
         {loading}
         <div className="lib">
+            {noData}
             <div className="cards-container">
                 {books.map(book => (
                     <>
                     <div className="card"
-                    onClick={() => openModal(`${book._id}`)}
+                    onClick={() => openModal(`${book.id}`)}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
@@ -83,7 +98,7 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
-                    _id={data._id}
+                    id={data.id}
                     setModalIsOpen={setModalIsOpen}
                     description={data.description} 
                     author={data.author}

@@ -17,17 +17,17 @@ const Books = ({
     setModalIsOpen,
     description,
     author,
-    _id,
+    id,
     isPublished,
     ISBN
 }) => {
 
     const [likes, setLikes] = useState('')
 
-    console.log(_id)
+    console.log(id)
 
     const deleteBook = () => {
-        axios.delete(`${url}/${_id}`)
+        axios.delete(`${url}/${id}`)
         .then(res => {
             console.log(res.data)
         })
@@ -57,7 +57,7 @@ const Books = ({
                 <div className="fsw-600 fsz-14">The purse mase</div>
                 <div className="close-modal"
                 onClick={() => setModalIsOpen(false)}
-                value={_id}
+                value={id}
                 ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
