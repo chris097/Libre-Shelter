@@ -20,17 +20,26 @@ const BookModal = ({
         description: []
     })
 
-    // const [reminder, setReminder] = useState([])
+    const [authTitle, setAuthTitle] = useState("")
+    const [authAuthor, setAuthAuthor] = useState("")
+    const [authDesc, setAuthDesc] = useState("")
+
 
         const mySubmitHandler = (e) =>{
             e.preventDefault()
-            // if(
-            //     updateData.title.length < 5 || updateData.title.length > 50 || updateData.author.length < 5 || 
-            //     updateData.author.length > 50 || updateData.description.length < 50 ||updateData.description.length > 500 ||
-            //     updateData.isPublished !== Number || updateData.isPublished !== 4 
-            // ){
-            //     console.log('Something went wrong... complete character')
-            // }else{
+            if(
+                updateData.title.length < 5 || updateData.title.length > 50 
+            ){
+                // console.log('Something went wrong... complete character')
+                setAuthTitle(<p className="reminder">Title: max 50! min 5!</p>)
+            }else if(updateData.author.length < 5 || updateData.author.length > 50 ){
+                // console.log('author: max 50, min: 5')
+                setAuthAuthor(<p className="reminder">Author: max 50! min 5!</p>)
+            }else if(updateData.description.length < 50 || updateData.description.length > 500 ){
+                // console.log('description: max 500! min 50!')
+                setAuthDesc(<p className="reminder">Description: max 500! min 50!</p>)
+            }
+            else{
                setModalIsOpen(false)
                setTimeout(() => {
                 window.location.reload(false)
@@ -42,6 +51,7 @@ const BookModal = ({
             .catch(err => console.error(`Not updating..., ${err.message}!`))
                 // setModalIsOpen(false)
             }, 2000);
+        }
             // setUpdateData('')
             console.log(updateData);
         // }
@@ -91,7 +101,8 @@ const BookModal = ({
                     id="title"
                     required
                     /></div>
-                    <p className="reminder">Title: max 50! min 5!</p>
+                    {authTitle}
+                    {/* <p className="reminder">Title: max 50! min 5!</p> */}
                     <label htmlFor="tittle">Author</label>
                     <div><input 
                     value={updateData.author}
@@ -102,7 +113,7 @@ const BookModal = ({
                     id="author"
                     required
                     /></div>
-                    <p className="reminder">Author: max 50! min 5!</p>
+                    {authAuthor}
                     <label htmlFor="book">Book Url</label>
                     <div><input 
                     type="text" 
@@ -123,7 +134,7 @@ const BookModal = ({
                     onBlur={e => eHandler(e) }
                     required
                     /></div>
-                    <p className="reminder">Published: must ba a digit! max 4</p>
+                    {/* <p className="reminder">Published: must ba a digit! max 4</p> */}
                     <label htmlFor="tittle">ISBN</label>
                     <div><input 
                     type="text" 
@@ -133,7 +144,7 @@ const BookModal = ({
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     /></div>
-                    <p className="reminder">Title: max 50! min 5!</p>
+                    {/* <p className="reminder">Title: max 50! min 5!</p> */}
                     <label htmlFor="tittle">Description</label>
                     <div><input 
                     type="text" 
@@ -144,7 +155,7 @@ const BookModal = ({
                     onBlur={e => eHandler(e) }
                     required
                     /></div>
-                    <p className="reminder">Description: max 500! min 50!</p>
+                    {authDesc}
                     <button type="submit">Add</button>
                 </form>
             </div>
