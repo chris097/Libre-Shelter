@@ -6,11 +6,12 @@ import loveIcon from "./Icons/Vector.svg";
 import msgIcon from "./Icons/msg-icon.svg";
 import axios from "axios";
 import Books from "../Modal/Books/Books";
+import Header from "../Header/Header";
 // import AddBook from "../Modal/AddBook/AddBook"
 
 const Loading = () => {
     return(
-        <h3 className="loading">Fetching data <i class="fa fa-refresh fa-spin"></i></h3>
+        <h3 className="loading">Fetching data <i className="fa fa-refresh fa-spin"></i></h3>
     )
 }
 
@@ -64,6 +65,8 @@ const Lib = () => {
     })
     }
 
+//    books.filter(event=>console.log(event.title.toLowerCase().includes('front'.toLowerCase())))
+
     return(
         <>
         {loading}
@@ -105,6 +108,7 @@ const Lib = () => {
                     isPublished={data.isPublished}
                     ISBN={data.ISBN}
                 />
+                <Header />
                 </>
                 ))} 
                
