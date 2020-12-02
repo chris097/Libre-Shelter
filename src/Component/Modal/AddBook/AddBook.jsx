@@ -33,6 +33,7 @@ const BookModal = ({
             // }else{
                setModalIsOpen(false)
                setTimeout(() => {
+                window.location.reload(false)
                 axios.post(url, updateData)
                 .then(res => {
                 let result = res.data
@@ -80,7 +81,7 @@ const BookModal = ({
                 </div>
                 </div>
                 <form action="" onSubmit={mySubmitHandler ? mySubmitHandler : ''}>
-                    <label htmlFor="tittle">Tittle</label>
+                    <label htmlFor="tittle">Title</label>
                     <div><input 
                     value={updateData.title}
                     onChange={ e => eHandler(e) }
@@ -90,6 +91,7 @@ const BookModal = ({
                     id="title"
                     required
                     /></div>
+                    <p className="reminder">Title: max 50! min 5!</p>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
                     value={updateData.author}
@@ -100,6 +102,7 @@ const BookModal = ({
                     id="author"
                     required
                     /></div>
+                    <p className="reminder">Author: max 50! min 5!</p>
                     <label htmlFor="book">Book Url</label>
                     <div><input 
                     type="text" 
@@ -120,6 +123,7 @@ const BookModal = ({
                     onBlur={e => eHandler(e) }
                     required
                     /></div>
+                    <p className="reminder">Published: must ba a digit! max 4</p>
                     <label htmlFor="tittle">ISBN</label>
                     <div><input 
                     type="text" 
@@ -129,6 +133,7 @@ const BookModal = ({
                     onChange={e => eHandler(e)}
                     onBlur={e => eHandler(e) }
                     /></div>
+                    <p className="reminder">Title: max 50! min 5!</p>
                     <label htmlFor="tittle">Description</label>
                     <div><input 
                     type="text" 
@@ -139,6 +144,7 @@ const BookModal = ({
                     onBlur={e => eHandler(e) }
                     required
                     /></div>
+                    <p className="reminder">Description: max 500! min 50!</p>
                     <button type="submit">Add</button>
                 </form>
             </div>

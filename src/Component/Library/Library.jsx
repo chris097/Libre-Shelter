@@ -17,7 +17,7 @@ const Loading = () => {
 
 const NoData = () => {
     return(
-        <h4 className="loading">No Data Found...</h4>
+        <h4 className="loading">No Book Found...</h4>
     )
 }
 
@@ -40,10 +40,11 @@ const Lib = () => {
                 console.log(test)
                 setBooks(test)
                 setLoading('')
+                // window.location.reload(false)
             }, 3000);
         }
         if(test.length === 0){
-            console.log('no-data...')
+            console.log('no-data-found 404...')
             setTimeout(() => {
                 setNoData(<NoData />)
             }, 3100);
@@ -64,8 +65,6 @@ const Lib = () => {
         // console.log(result)
     })
     }
-
-//    books.filter(event=>console.log(event.title.toLowerCase().includes('front'.toLowerCase())))
 
     return(
         <>

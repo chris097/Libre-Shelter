@@ -30,6 +30,7 @@ const Books = ({
         axios.delete(`${url}/${id}`)
         .then(res => {
             console.log(res.data)
+            window.location.reload(false)
         })
         .catch(err => console.log('Access denied...', err.message))
         setModalIsOpen(false)
@@ -57,6 +58,7 @@ const Books = ({
                 <div className="fsw-600 fsz-14">The purse mase</div>
                 <div className="close-modal"
                 onClick={() => setModalIsOpen(false)}
+                onChange={e => e.target.value}
                 value={id}
                 ><img src={closeIcon} alt=""/></div>
             </div>
