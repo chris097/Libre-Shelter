@@ -105,7 +105,7 @@ const Books = ({
             <div className="col mg-top-5">
                 <div className="comment-img"><img src={commentImg} alt=""/></div>
                 <div className="write-comment-box">
-                    <div className="fsz-12 fsw-600">Okeyhacker <span className="light-color fsz-10 mg-lf fsw-400">1 Nov at 4:09</span></div>
+                    <div className="fsz-12 fsw-600">{author} <span className="light-color fsz-10 mg-lf fsw-400">1 Nov at 4:09</span></div>
                     <input type="text" id="write-comment-box" value=""/>
                     <div className="col">
                         <button className="comment-edit">Edit</button>

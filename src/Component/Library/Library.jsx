@@ -77,7 +77,7 @@ const Lib = () => {
                     <div className="card"
                     onClick={() => openModal(`${book.id}`)}
                     >
-                    <img src={card1} alt="card1"/>
+                    <img src={book.bookUrl} alt="card1"/>
                     <div className="book-name">
                         <div className="fsw-600">{book.title}</div>
                         <div className="secondary-color fsz-13">{book.author}</div>

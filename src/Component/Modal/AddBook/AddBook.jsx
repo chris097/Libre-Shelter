@@ -19,7 +19,6 @@ const BookModal = ({
         ISBN: [],
         description: []
     })
-
     const [authTitle, setAuthTitle] = useState("")
     const [authAuthor, setAuthAuthor] = useState("")
     const [authDesc, setAuthDesc] = useState("")
