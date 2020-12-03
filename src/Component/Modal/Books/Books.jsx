@@ -22,19 +22,26 @@ const Books = ({
     ISBN
 }) => {
 
-    const [likes, setLikes] = useState('')
+    const [likes, setLikes] = useState('');
+    // const [deleteModal, setDeleteModal] = useState('')
 
     console.log(id)
 
-    const deleteBook = () => {
-        axios.delete(`${url}/${id}`)
-        .then(res => {
-            console.log(res.data)
-            window.location.reload(false)
-        })
-        .catch(err => console.log('Access denied...', err.message))
+    const deleteBook = () =>{
+        console.log('Are sure you want to delete...')
         setModalIsOpen(false)
     }
+
+    // const deleteBook = () => {
+    //     console.log('Are sure want to delete...')
+    //     axios.delete(`${url}/${id}`)
+    //     .then(res => {
+    //         console.log(res.data)
+    //         window.location.reload(false)
+    //     })
+    //     .catch(err => console.log('Access denied...', err.message))
+    //     setModalIsOpen(false)
+    // }
 
     return(
         <>
