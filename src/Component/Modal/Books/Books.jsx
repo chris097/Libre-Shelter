@@ -11,6 +11,39 @@ import Modal from "react-modal";
 import axios from "axios";
 import {url} from "../../Library/Library";
 
+const ToDel = ({id}) => {
+    const cancelReq = () => {
+        console.log('cancel...')
+        window.location.reload(false)
+    }
+
+    const delReq = () => {
+        console.log('something was deleted...')
+        axios.delete(`${url}/${id}`)
+            .then(res => {
+                console.log(res.data)
+                window.location.reload(false)
+            })
+            .catch(err => console.log('Access denied...', err.message))
+    }
+    return(
+        <>
+        <div className="books"></div>
+        <div className="to-del">
+        <p>Are sure you want to delete...</p>
+        <button 
+        className="cancel-btn" 
+        type="reset" 
+        onClick={cancelReq}>Cancel</button>
+        <button 
+        className="del-btn"
+        type="reset" 
+        onClick={delReq}>Delete</button>
+        </div>
+        </>
+    )
+}
+
 
 const Books = ({
     modalIsOpen,
@@ -23,28 +56,18 @@ const Books = ({
 }) => {
 
     const [likes, setLikes] = useState('');
-    // const [deleteModal, setDeleteModal] = useState('')
+    const [deleteModal, setDeleteModal] = useState('')
 
     console.log(id)
 
     const deleteBook = () =>{
-        console.log('Are sure you want to delete...')
+        setDeleteModal(<ToDel id={id}/>)
         setModalIsOpen(false)
     }
 
-    // const deleteBook = () => {
-    //     console.log('Are sure want to delete...')
-    //     axios.delete(`${url}/${id}`)
-    //     .then(res => {
-    //         console.log(res.data)
-    //         window.location.reload(false)
-    //     })
-    //     .catch(err => console.log('Access denied...', err.message))
-    //     setModalIsOpen(false)
-    // }
-
     return(
         <>
+        {deleteModal}
         <Modal isOpen={modalIsOpen}
         style={{
             overlay: {
