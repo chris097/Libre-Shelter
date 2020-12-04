@@ -28,7 +28,7 @@ const ToDel = ({id}) => {
     }
     return(
         <>
-        <div className="books"></div>
+        <div className="del-bckgrd"></div>
         <div className="to-del">
         <p>Are sure you want to delete...</p>
         <button 
