@@ -65,6 +65,10 @@ const Books = ({
         setModalIsOpen(false)
     }
 
+    const eb = () => {
+
+    }
+
     return(
         <>
         {deleteModal}
@@ -109,7 +113,7 @@ const Books = ({
                     </div>
                 </div>
                 <div className="book-col-2">
-                    <p>{description}</p>
+                <input value={description}/>
                     <div className="column">
                         <div className="love-icon" onClick={() => setLikes(!likes ? likes +1 : '')}>
                             <img src={loveIcon} alt=""/><span>{likes}</span>
