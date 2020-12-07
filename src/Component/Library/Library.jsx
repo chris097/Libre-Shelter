@@ -17,7 +17,7 @@ const Loading = () => {
 
 const NoData = () => {
     return(
-        <h4 className="loading">No Book Found...</h4>
+        <h4 className="loading">No data Found...</h4>
     )
 }
 
@@ -56,9 +56,9 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
 
-    const openModal = (id) => {
+    const openModal = (_id) => {
         setModalIsOpen(true)
-        axios.get(`${url}/${id}`)
+        axios.get(`${url}/${_id}`)
         .then(res => {
         const result = res.data
         setData(result)
@@ -100,7 +100,7 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
-                    id={data.id}
+                    _id={data._id}
                     setModalIsOpen={setModalIsOpen}
                     description={data.description} 
                     author={data.author}

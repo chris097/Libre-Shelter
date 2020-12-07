@@ -11,7 +11,7 @@ import Modal from "react-modal";
 import axios from "axios";
 import {url} from "../../Library/Library";
 
-const ToDel = ({id}) => {
+const ToDel = ({_id}) => {
     const cancelReq = () => {
         console.log('cancel...')
         window.location.reload(false)
@@ -19,7 +19,7 @@ const ToDel = ({id}) => {
 
     const delReq = () => {
         console.log('something was deleted...')
-        axios.delete(`${url}/${id}`)
+        axios.delete(`${url}/${_id}`)
             .then(res => {
                 console.log(res.data)
                 window.location.reload(false)
@@ -50,7 +50,7 @@ const Books = ({
     setModalIsOpen,
     description,
     author,
-    id,
+    _id,
     isPublished,
     ISBN
 }) => {
@@ -59,7 +59,7 @@ const Books = ({
     const [deleteModal, setDeleteModal] = useState('')
     
     const deleteBook = () =>{
-        setDeleteModal(<ToDel id={id}/>)
+        setDeleteModal(<ToDel id={_id}/>)
         setModalIsOpen(false)
     }
 
@@ -87,7 +87,7 @@ const Books = ({
                 <div className="close-modal"
                 onClick={() => setModalIsOpen(false)}
                 onChange={e => e.target.value}
-                value={id}
+                value={_id}
                 ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
