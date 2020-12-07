@@ -57,16 +57,10 @@ const Books = ({
 
     const [likes, setLikes] = useState('');
     const [deleteModal, setDeleteModal] = useState('')
-
-    console.log(id)
-
+    
     const deleteBook = () =>{
         setDeleteModal(<ToDel id={id}/>)
         setModalIsOpen(false)
-    }
-
-    const eb = () => {
-
     }
 
     return(
@@ -106,14 +100,14 @@ const Books = ({
                         <p>Pubished : <span>{isPublished}</span></p>
                     </div>
                     <div className="pubisher">
-                        <p>Pubisher : <span>{author}</span></p>
+                        <p>Publisher : <span>{author}</span></p>
                     </div>
                     <div className="isbn">
                         <p>ISBN : <span>{ISBN}</span></p>
                     </div>
                 </div>
                 <div className="book-col-2">
-                <input value={description}/>
+                <p>{description}</p>
                     <div className="column">
                         <div className="love-icon" onClick={() => setLikes(!likes ? likes +1 : '')}>
                             <img src={loveIcon} alt=""/><span>{likes}</span>
