@@ -75,7 +75,7 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    onClick={() => openModal(`${book.id}`)}
+                    onClick={() => openModal(`${book._id}`)}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
