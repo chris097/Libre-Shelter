@@ -45,7 +45,12 @@ const ToDel = ({_id}) => {
     )
 }
 
-const ToEdit = ({author, title}) => {
+const ToEdit = ({
+    author,
+    title
+}) => {
+    const [updateTitle, setUpdateTitle] = useState('')
+    const [updateAuthor, setUpdateAuthor] = useState('')
 
     return(
         <>
@@ -58,18 +63,21 @@ const ToEdit = ({author, title}) => {
                 <form action="">
                     <label htmlFor="tittle">Title</label>
                     <div><input 
-                    value={title}
+                    value={updateTitle}
                     type="text" 
                     name="title" 
                     id="title"
+                    placeholder={title}
+                    onChange={e => setUpdateTitle(e.target.value.toLowerCase())}
                     /></div>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
-                    value={author}
+                    value={updateAuthor}
                     type="text" 
                     name="author" 
                     id="author"
-                    onChange={e => e.target.value}
+                    placeholder={author}
+                    onChange={e => setUpdateAuthor(e.target.value.toLowerCase())}
                     /></div>
                     {/* {authAuthor} */}
                     <label htmlFor="book">Book Url</label>
