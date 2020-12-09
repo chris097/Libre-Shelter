@@ -4,9 +4,10 @@
     position: relative;
     background-color: #f7f7f7;
     margin-top: 70px;
-    z-index: 666;
+    z-index: 555;
     position: fixed;
     left: 0;
+    z-index: 1;
 }
 
 .category .category-content{

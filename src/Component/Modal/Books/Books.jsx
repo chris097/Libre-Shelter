@@ -10,6 +10,7 @@ import commentImg from "./Images/comment-img.svg";
 import Modal from "react-modal";
 import axios from "axios";
 import {url} from "../../Library/Library";
+import "../AddBook/AddBook.css";
 
 const ToDel = ({_id}) => {
     const cancelReq = () => {
@@ -44,28 +45,97 @@ const ToDel = ({_id}) => {
     )
 }
 
+const ToEdit = ({author, title}) => {
+
+    return(
+        <>
+        <div className="books"></div>
+            <div className="add-book"></div>
+            <div className="add-container">
+                <div className="column">
+                <div>Edit a Book</div>
+                </div>
+                <form action="">
+                    <label htmlFor="tittle">Title</label>
+                    <div><input 
+                    value={title}
+                    type="text" 
+                    name="title" 
+                    id="title"
+                    /></div>
+                    <label htmlFor="tittle">Author</label>
+                    <div><input 
+                    value={author}
+                    type="text" 
+                    name="author" 
+                    id="author"
+                    onChange={e => e.target.value}
+                    /></div>
+                    {/* {authAuthor} */}
+                    <label htmlFor="book">Book Url</label>
+                    <div><input 
+                    type="text" 
+                    name="bookUrl" 
+                    id="bookUrl"
+                    /></div>
+                    <label htmlFor="published">Published</label>
+                    <div><input 
+                    type="text" 
+                    name="isPublished" 
+                    id="isPublished"
+                    /></div>
+                    {/* <p className="reminder">Published: must ba a digit! max 4</p> */}
+                    <label htmlFor="tittle">ISBN</label>
+                    <div><input 
+                    type="text" 
+                    name="ISBN" 
+                    id="ISBN"
+                    /></div>
+                    {/* <p className="reminder">Title: max 50! min 5!</p> */}
+                    <label htmlFor="tittle">Description</label>
+                    <div><input 
+                    type="text" 
+                    name="description" 
+                    id="description"
+                    /></div>
+                    <div className="col">
+                    <button type="submit">Cancel</button>
+                    <button type="submit">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </>
+    )
+}
+
 
 const Books = ({
     modalIsOpen,
     setModalIsOpen,
     description,
     author,
-    _id,
+    id,
     isPublished,
+    title,
     ISBN
 }) => {
 
     const [likes, setLikes] = useState('');
     const [deleteModal, setDeleteModal] = useState('')
+    const [editModal, setEditModal] = useState('')
     
     const deleteBook = () =>{
-        setDeleteModal(<ToDel id={_id}/>)
+        setDeleteModal(<ToDel id={id} key={id}/>)
+        setModalIsOpen(false)
+    }
+
+    const editBook = () => {
+        setEditModal(<ToEdit author={author} title={title} />)
         setModalIsOpen(false)
     }
 
     return(
         <>
-        {deleteModal}
         <Modal isOpen={modalIsOpen}
         style={{
             overlay: {
@@ -87,7 +157,7 @@ const Books = ({
                 <div className="close-modal"
                 onClick={() => setModalIsOpen(false)}
                 onChange={e => e.target.value}
-                value={_id}
+                value={id}
                 ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
@@ -113,7 +183,7 @@ const Books = ({
                             <img src={loveIcon} alt=""/><span>{likes}</span>
                         </div>
                         <div className="col">
-                            <div className="edit-icon">
+                            <div className="edit-icon" onClick={editBook}>
                                 <img src={editIcon} alt="edit-icon"/> 
                             </div>
                             <div className="delete-icon" onClick={deleteBook}>
@@ -134,7 +204,7 @@ const Books = ({
                 <div className="comment-img"><img src={commentImg} alt=""/></div>
                 <div className="write-comment-box">
                     <div className="fsz-12 fsw-600">{author} <span className="light-color fsz-10 mg-lf fsw-400">1 Nov at 4:09</span></div>
-                    <input type="text" id="write-comment-box" value=""/>
+                    <input type="text" id="write-comment-box"/>
                     <div className="col">
                         <button className="comment-edit">Edit</button>
                         <button className="comment-delete">Delete</button>
@@ -143,6 +213,8 @@ const Books = ({
             </div>
         </div>
         </Modal>
+        {deleteModal}
+        {editModal}
         </>
     )
 }

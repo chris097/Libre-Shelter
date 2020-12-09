@@ -21,8 +21,8 @@ const NoData = () => {
     )
 }
 
-export let url = "https://lib-shelter.herokuapp.com/api/items";
-// export let url = "http://localhost:3004/books";
+// export let url = "https://lib-shelter.herokuapp.com/api/items";
+export let url = "http://localhost:3004/books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
@@ -56,9 +56,9 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
 
-    const openModal = (_id) => {
+    const openModal = (id) => {
         setModalIsOpen(true)
-        axios.get(`${url}/${_id}`)
+        axios.get(`${url}/${id}`)
         .then(res => {
         const result = res.data
         setData(result)
@@ -75,7 +75,8 @@ const Lib = () => {
                 {books.map(book => (
                     <>
                     <div className="card"
-                    onClick={() => openModal(`${book._id}`)}
+                    onClick={() => openModal(`${book.id}`)}
+                    key={book.id}
                     >
                     <img src={card1} alt="card1"/>
                     <div className="book-name">
@@ -100,12 +101,13 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
-                    _id={data._id}
+                    id={data.id}
                     setModalIsOpen={setModalIsOpen}
                     description={data.description} 
                     author={data.author}
                     isPublished={data.isPublished}
                     ISBN={data.ISBN}
+                    title={data.title}
                 />
                 <Header />
                 </>
