@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./Header.css";
 import "../Utils/index.css";
 import "../Modal/AddBook/AddBook.css";
 import searchFormIcon from "../Header/Icons/search-icon.svg";
 import addBookIcon from "../Header/Icons/add-book-icon.svg";
 import BookModal from "../Modal/AddBook/AddBook";
-import axios from "axios";
-import { url } from "../Library/Library";
+// import axios from "axios";
+// import { url } from "../Library/Library";
 
 const SearchForm = ({ search }) => {
     return(
@@ -36,16 +36,16 @@ const Header = ({eSearch}) =>{
     const [book, setBook] = useState('')
     const [search, setSearch] = useState([])
     const [searchBox, setSearchBox] = useState([])
-    const [searchBook, setSearchBook] = useState([])
+    // const [searchBook, setSearchBook] = useState([])
 
-    useEffect(() => {
-        axios.get(url)
-        .then(res => setSearchBook(res.data))
-    }, [])
+    // useEffect(() => {
+    //     axios.get(url)
+    //     .then(res => setSearchBook(res.data))
+    // }, [])
 
-    searchBook.filter(book => {
-       return book.title.toLowerCase().includes(search) 
-    })
+    // searchBook.filter(book => {
+    //    return book.title.includes(search) 
+    // })
 
     const eBooks = e => {
         setSearch(e.target.value)

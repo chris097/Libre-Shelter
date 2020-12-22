@@ -104,7 +104,7 @@ const BookModal = ({
                     {/* <p className="reminder">Title: max 50! min 5!</p> */}
                     <label htmlFor="tittle">Author</label>
                     <div><input 
-                    value={updateData.author.toLocaleString()}
+                    value={updateData.authorServer}
                     onChange={ e => eHandler(e) }
                     onBlur={e => eHandler(e) }
                     type="text" 

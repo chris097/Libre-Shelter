@@ -12,7 +12,7 @@ import axios from "axios";
 import {url} from "../../Library/Library";
 import "../AddBook/AddBook.css";
 
-const ToDel = ({_id}) => {
+const ToDel = ({id}) => {
     const cancelReq = () => {
         console.log('cancel...')
         window.location.reload(false)
@@ -20,7 +20,7 @@ const ToDel = ({_id}) => {
 
     const delReq = () => {
         console.log('something was deleted...')
-        axios.delete(`${url}/${_id}`)
+        axios.delete(`${url}/${id}`)
             .then(res => {
                 console.log(res.data)
                 window.location.reload(false)
@@ -47,10 +47,26 @@ const ToDel = ({_id}) => {
 
 const ToEdit = ({
     author,
-    title
+    title,
+    isPublished,
+    bookUrl,
+    ISBN,
+    description,
+    _id
 }) => {
-    const [updateTitle, setUpdateTitle] = useState('')
-    const [updateAuthor, setUpdateAuthor] = useState('')
+    const [updateTitle, setUpdateTitle] = useState('');
+    const [updateAuthor, setUpdateAuthor] = useState('');
+    const [updateBookUrl, setUpdateBookUrl] = useState('');
+    const [updateisPublish, setUpdateisPublish] = useState('');
+    const [updateISBN, setUpdateISBN] = useState('');
+    const [updateDesc, setUpdateDesc] = useState('');
+
+    const editBook = (e) => {
+        
+        console.log('something was clocked...')
+        axios.put(`${url}/${_id}`)
+        .then(res => console.log(res.request))
+    }
 
     return(
         <>
@@ -68,7 +84,7 @@ const ToEdit = ({
                     name="title" 
                     id="title"
                     placeholder={title}
-                    onChange={e => setUpdateTitle(e.target.value.toLowerCase())}
+                    onChange={e => setUpdateTitle(e.target.value)}
                     /></div>
                     <label htmlFor="tittle">Author</label>
                     <div><input 
@@ -77,38 +93,50 @@ const ToEdit = ({
                     name="author" 
                     id="author"
                     placeholder={author}
-                    onChange={e => setUpdateAuthor(e.target.value.toLowerCase())}
+                    onChange={e => setUpdateAuthor(e.target.value)}
                     /></div>
                     {/* {authAuthor} */}
                     <label htmlFor="book">Book Url</label>
                     <div><input 
+                    value={updateBookUrl}
                     type="text" 
                     name="bookUrl" 
                     id="bookUrl"
+                    placeholder={bookUrl}
+                    onChange={e => setUpdateBookUrl(e.target.value)}
                     /></div>
                     <label htmlFor="published">Published</label>
                     <div><input 
+                    value={updateisPublish}
                     type="text" 
                     name="isPublished" 
                     id="isPublished"
+                    placeholder={isPublished}
+                    onChange={e => setUpdateisPublish(e.target.value)}
                     /></div>
                     {/* <p className="reminder">Published: must ba a digit! max 4</p> */}
                     <label htmlFor="tittle">ISBN</label>
                     <div><input 
+                    value={updateISBN}
                     type="text" 
                     name="ISBN" 
                     id="ISBN"
+                    placeholder={ISBN}
+                    onChange={e => setUpdateISBN(e.target.value)}
                     /></div>
                     {/* <p className="reminder">Title: max 50! min 5!</p> */}
                     <label htmlFor="tittle">Description</label>
                     <div><input 
+                    value={updateDesc}
                     type="text" 
                     name="description" 
                     id="description"
+                    placeholder={description}
+                    onChange={e => setUpdateDesc(e.target.value)}
                     /></div>
                     <div className="col">
                     <button type="submit">Cancel</button>
-                    <button type="submit">Edit</button>
+                    <button onClick={editBook}>Edit</button>
                     </div>
                 </form>
             </div>
@@ -122,10 +150,11 @@ const Books = ({
     setModalIsOpen,
     description,
     author,
-    id,
+    _id,
     isPublished,
     title,
-    ISBN
+    ISBN,
+    bookUrl
 }) => {
 
     const [likes, setLikes] = useState('');
@@ -133,12 +162,20 @@ const Books = ({
     const [editModal, setEditModal] = useState('')
     
     const deleteBook = () =>{
-        setDeleteModal(<ToDel id={id} key={id}/>)
+        setDeleteModal(<ToDel id={_id} key={_id}/>)
         setModalIsOpen(false)
     }
 
     const editBook = () => {
-        setEditModal(<ToEdit author={author} title={title} />)
+        setEditModal(<ToEdit 
+            id={_id}
+            author={author} 
+            title={title} 
+            isPublished={isPublished}
+            bookUrl={bookUrl}
+            ISBN={ISBN}
+            description={description}
+        />)
         setModalIsOpen(false)
     }
 
@@ -165,7 +202,7 @@ const Books = ({
                 <div className="close-modal"
                 onClick={() => setModalIsOpen(false)}
                 onChange={e => e.target.value}
-                value={id}
+                value={_id}
                 ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">
