@@ -61,11 +61,18 @@ const ToEdit = ({
     const [updateISBN, setUpdateISBN] = useState('');
     const [updateDesc, setUpdateDesc] = useState('');
 
+    const [updateData, setUpdateData] = useState({
+        updateAuthor
+    })
+
     const editBook = (e) => {
         
         console.log('something was clocked...')
-        axios.put(`${url}/${_id}`)
-        .then(res => console.log(res.request))
+        axios.put(`${url}/${_id}`, updateData)
+        .then(res => {
+            setUpdateData(res.data)
+            console.log(res.data)
+        })
     }
 
     return(

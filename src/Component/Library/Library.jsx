@@ -21,8 +21,8 @@ const NoData = () => {
     )
 }
 
-export let url = "https://lib-shelter.herokuapp.com/api/items";
-// export let url = "http://localhost:3004/books";
+// export let url = "https://lib-shelter.herokuapp.com/api/items";
+export let url = "http://localhost:3004/books";
 
 const Lib = () => {
     const [ books, setBooks] = useState([])
