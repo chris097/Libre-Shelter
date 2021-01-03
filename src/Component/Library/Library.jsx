@@ -35,6 +35,7 @@ const Lib = () => {
     axios.get(`${url}`)
     .then(res => {
         const test = res.data;
+        // <Category test={test.length} />
         if(test){
             setTimeout(() => {
                 console.log(test)
@@ -49,7 +50,7 @@ const Lib = () => {
                 setNoData(<NoData />)
             }, 3100);
         }
-        console.log(test.length === 0)
+        console.log(test.length)
 
         return test;
     })

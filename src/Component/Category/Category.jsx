@@ -17,7 +17,7 @@ const engine = (name, func) => {
 }
 
 
-const Category = () => {
+const Category = ({test}) => {
     const [openFilterModal, setOpenFilterModal] = useState(false);
     const [openOptionModal, setOpenOptionModal] = useState(false);
     const [show, setShow] = useState(true)
@@ -77,7 +77,7 @@ const Category = () => {
                     <div className="fiction">
                         <span className="primary-color">Fiction</span>
                         <span><img src={arrorIcon} alt="arror-icon"/></span>
-                        <span>Showing 18 result(s)</span>
+                        <span>Showing {test} result(s)</span>
                     </div>
                     <div className="filter">
                        <div className="col light"
