@@ -52,7 +52,7 @@ const ToEdit = ({
     bookUrl,
     ISBN,
     description,
-    _id
+    id
 }) => {
     const [updateTitle, setUpdateTitle] = useState('');
     const [updateAuthor, setUpdateAuthor] = useState('');
@@ -61,16 +61,16 @@ const ToEdit = ({
     const [updateISBN, setUpdateISBN] = useState('');
     const [updateDesc, setUpdateDesc] = useState('');
 
-    const [updateData, setUpdateData] = useState({
-        updateAuthor
-    })
+    // const [updateData, setUpdateData] = useState({
+    //     author : []
+    // })
 
     const editBook = (e) => {
         
         console.log('something was clocked...')
-        axios.put(`${url}/${_id}`, updateData)
+        axios.put(`${url}/${id}`, updateTitle)
         .then(res => {
-            setUpdateData(res.data)
+            setUpdateTitle(res.data)
             console.log(res.data)
         })
     }
@@ -157,7 +157,7 @@ const Books = ({
     setModalIsOpen,
     description,
     author,
-    _id,
+    id,
     isPublished,
     title,
     ISBN,
@@ -169,13 +169,13 @@ const Books = ({
     const [editModal, setEditModal] = useState('')
     
     const deleteBook = () =>{
-        setDeleteModal(<ToDel id={_id} key={_id}/>)
+        setDeleteModal(<ToDel id={id} key={id}/>)
         setModalIsOpen(false)
     }
 
     const editBook = () => {
         setEditModal(<ToEdit 
-            id={_id}
+            id={id}
             author={author} 
             title={title} 
             isPublished={isPublished}
@@ -209,7 +209,7 @@ const Books = ({
                 <div className="close-modal"
                 onClick={() => setModalIsOpen(false)}
                 onChange={e => e.target.value}
-                value={_id}
+                value={id}
                 ><img src={closeIcon} alt=""/></div>
             </div>
             <div className="column">

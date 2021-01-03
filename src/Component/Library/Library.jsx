@@ -56,9 +56,9 @@ const Lib = () => {
     .catch(err => console.log('Something went wrong...', err.message))
     }, []);
 
-    const openModal = (_id) => {
+    const openModal = (id) => {
         setModalIsOpen(true)
-        axios.get(`${url}/${_id}`)
+        axios.get(`${url}/${id}`)
         .then(res => {
         const result = res.data
         setData(result)
@@ -101,7 +101,7 @@ const Lib = () => {
                 </div>
                 <Books
                     modalIsOpen={modalIsOpen}
-                    _id={data._id}
+                    id={data.id}
                     setModalIsOpen={setModalIsOpen}
                     description={data.description} 
                     author={data.author}
