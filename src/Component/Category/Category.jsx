@@ -48,13 +48,13 @@ const Category = ({test}) => {
     }
 
 
-    const menuClose = () => {
-        engine('.sidebar', 'none')
-        engine('.close-menu', 'none')
-        const div = document.querySelector('.open-menu')
-        div.style.display = 'block'
-        // console.log(div)
-    }
+    // const menuClose = () => {
+    //     engine('.sidebar', 'none')
+    //     engine('.close-menu', 'none')
+    //     const div = document.querySelector('.open-menu')
+    //     div.style.display = 'block'
+    //     // console.log(div)
+    // }
 
     return (
         <>
